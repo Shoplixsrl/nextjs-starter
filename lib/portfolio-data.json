@@ -1,0 +1,50 @@
+{
+  "name": "Alessio",
+  "title": "Full Stack Developer",
+  "bio": "Passionate developer with expertise in modern web technologies",
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-commerce Platform",
+      "description": "A modern e-commerce solution built with Next.js and TypeScript",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
+      "imageUrl": "/projects/ecommerce.jpg",
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com/alessio/ecommerce"
+    },
+    {
+      "id": 2,
+      "title": "Task Management App",
+      "description": "Collaborative task management tool with real-time updates",
+      "technologies": ["React", "Node.js", "Socket.io", "MongoDB"],
+      "imageUrl": "/projects/taskapp.jpg",
+      "liveUrl": "https://example.com/tasks",
+      "githubUrl": "https://github.com/alessio/taskapp"
+    },
+    {
+      "id": 3,
+      "title": "Portfolio Website",
+      "description": "Personal portfolio showcasing projects and skills",
+      "technologies": ["Next.js", "Tailwind CSS", "Framer Motion"],
+      "imageUrl": "/projects/portfolio.jpg",
+      "liveUrl": "https://example.com/portfolio",
+      "githubUrl": "https://github.com/alessio/portfolio"
+    }
+  ],
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "MongoDB",
+    "Tailwind CSS",
+    "Git"
+  ],
+  "contact": {
+    "email": "alessio@example.com",
+    "github": "https://github.com/alessio",
+    "linkedin": "https://linkedin.com/in/alessio"
+  }
+}
