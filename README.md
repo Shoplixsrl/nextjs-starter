@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 FatturaAI - Piattaforma SaaS di Fatturazione Elettronica con AI
 
-## Getting Started
+> La piattaforma che **annichilisce la concorrenza** con intelligenza artificiale, automazione totale e design sublime.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.1.0-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![Turborepo](https://img.shields.io/badge/Turborepo-2.6-red)](https://turbo.build/)
+[![Expo](https://img.shields.io/badge/Expo-~52.0-black)](https://expo.dev/)
+
+---
+
+## ✨ Features
+
+### 🎯 Core Fatturazione
+- ✅ **Gestione Completa Fatture** B2B, B2C e PA
+- ✅ **Generazione XML FatturaPA** v1.2.2 conforme SDI 2025
+- ✅ **Integrazione SDI** completa (invio, ricezione, notifiche)
+- ✅ **Firma Digitale** automatica
+- ✅ **Conservazione Sostitutiva** a norma di legge
+- ✅ **Multi-Tenant** architecture enterprise
+
+### 🤖 AI & Machine Learning
+- ✅ **AI Chatbot Assistant** per creazione fatture vocale
+- ✅ **OCR Intelligente** per scansione documenti
+- ✅ **Anomaly Detection** per errori fiscali
+- ✅ **Predizioni ML** tempi di pagamento
+- ✅ **Revenue Forecasting** con analytics predittive
+- ✅ **Seasonal Pattern Detection**
+
+### 📱 Multi-Platform
+- ✅ **Web App** moderna con Next.js 15 + React 19
+- ✅ **Mobile App** nativa iOS/Android con React Native/Expo
+- ✅ **Real-time Sync** tra dispositivi
+- ✅ **Offline-first** con sincronizzazione automatica
+
+### 🎨 UI/UX
+- ✅ **Design Moderno** con gradiente blu-viola
+- ✅ **Dashboard Analytics** real-time
+- ✅ **Componenti shadcn/ui** (46 componenti pre-built)
+- ✅ **Responsive** e mobile-first
+- ✅ **Dark Mode** ready
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisiti
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Node.js >= 20.0.0
+node --version
+
+# Bun >= 1.3.0
+bun --version
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# 1. Clone repository
+git clone https://github.com/Shoplixsrl/nextjs-starter.git
+cd nextjs-starter
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 2. Install dependencies
+bun install
 
-## Learn More
+# 3. Setup environment variables
+cp apps/web/.env.example apps/web/.env.local
 
-To learn more about Next.js, take a look at the following resources:
+# Edit .env.local e aggiungi:
+# DATABASE_URL="postgresql://..."
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Run web app
+cd apps/web && bun run dev
 
-## Deploy on Vercel
+# Run mobile app
+cd apps/mobile && bun start
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Build for production
+bun run build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+**Made with 💜 in Italia | Conforme SDI 2025 | Built with Next.js + AI**
