@@ -15,6 +15,7 @@ export default function DashboardPage() {
   const [prompt, setPrompt] = useState("");
   const [generateImages, setGenerateImages] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isExportingPDF, setIsExportingPDF] = useState(false);
   const [generatedMenu, setGeneratedMenu] = useState<any>(null);
 
   const handleGenerateMenu = async () => {
@@ -44,6 +45,51 @@ export default function DashboardPage() {
       toast.error(error instanceof Error ? error.message : "Failed to generate menu");
     } finally {
       setIsGenerating(false);
+    }
+  };
+
+  const handleExportPDF = async () => {
+    if (!generatedMenu) {
+      toast.error("No menu to export");
+      return;
+    }
+
+    setIsExportingPDF(true);
+    try {
+      const response = await fetch("/api/pdf/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          menu: {
+            ...generatedMenu,
+            restaurantName: "Your Restaurant Name",
+          },
+          layout: "single",
+        }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || "Failed to generate PDF");
+      }
+
+      // Download PDF
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${generatedMenu.menuName.replace(/[^a-zA-Z0-9]/g, "_")}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+
+      toast.success("PDF downloaded successfully!");
+    } catch (error) {
+      console.error("PDF export error:", error);
+      toast.error(error instanceof Error ? error.message : "Failed to export PDF");
+    } finally {
+      setIsExportingPDF(false);
     }
   };
 
@@ -242,9 +288,22 @@ export default function DashboardPage() {
                       </div>
 
                       <div className="flex gap-2">
-                        <Button className="flex-1">
-                          <Download className="w-4 h-4 mr-2" />
-                          Export PDF
+                        <Button
+                          className="flex-1"
+                          onClick={handleExportPDF}
+                          disabled={isExportingPDF}
+                        >
+                          {isExportingPDF ? (
+                            <>
+                              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                              Exporting...
+                            </>
+                          ) : (
+                            <>
+                              <Download className="w-4 h-4 mr-2" />
+                              Export PDF
+                            </>
+                          )}
                         </Button>
                         <Button variant="outline" className="flex-1">
                           Save Menu
