@@ -27,6 +27,8 @@ import {
   Settings,
   LogOut,
   Building2,
+  FileText,
+  Plug,
 } from 'lucide-react';
 
 const navigation = [
@@ -56,6 +58,12 @@ const navigation = [
     icon: ShoppingCart,
   },
   {
+    name: 'Invoices',
+    href: '/dashboard/invoices',
+    icon: FileText,
+    badge: 'AI',
+  },
+  {
     name: 'Purchase Orders',
     href: '/dashboard/orders',
     icon: ShoppingCart,
@@ -81,6 +89,11 @@ const navigation = [
     href: '/dashboard/menu-engineering',
     icon: TrendingUp,
     badge: 'AI',
+  },
+  {
+    name: 'Integrations',
+    href: '/dashboard/integrations',
+    icon: Plug,
   },
 ];
 

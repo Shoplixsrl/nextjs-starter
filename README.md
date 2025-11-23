@@ -16,6 +16,9 @@
 - ✅ **Purchase Order Management** - Streamlined supplier ordering system
 - ✅ **Waste Tracking** - Comprehensive food waste monitoring and analysis
 - ✅ **Business Intelligence** - Real-time P&L and analytics dashboards
+- ✅ **Invoice Scanning (AI OCR)** - Automatic data extraction from supplier invoices
+- ✅ **POS Integrations** - Connect with Square, Toast, Lightspeed, Clover
+- ✅ **Nutrition Calculator** - Automatic nutritional analysis for all recipes
 
 ### 🤖 AI-Powered Features (Competitive Edge)
 
@@ -142,9 +145,12 @@ bunx drizzle-kit studio    # Open Drizzle Studio GUI
 
 | Feature | FoodCost AI | Food Cost in Cloud | MarketMan |
 |---------|-------------|-------------------|-----------|
-| AI Price Predictions | ✅ | ❌ | ❌ |
+| AI Price Predictions | ✅ | ❌ | ⚠️ Basic |
 | Computer Vision Waste | ✅ | ❌ | ❌ |
-| Menu Engineering AI | ✅ | ❌ | ✅ |
+| Menu Engineering AI | ✅ | ❌ | ❌ |
+| Invoice Scanning (AI OCR) | ✅ | ❌ | ✅ |
+| POS Integrations | ✅ | ✅ | ✅ |
+| Nutrition Calculator | ✅ | ❌ | ❌ |
 | Real-time Inventory | ✅ | ✅ | ✅ |
 | Multi-location | ✅ | ✅ | ✅ |
 | Modern UI/UX | ✅ | ⚠️ | ⚠️ |
