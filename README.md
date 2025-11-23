@@ -151,6 +151,49 @@ bunx drizzle-kit studio    # Open Drizzle Studio GUI
 
 **Business Impact**: 51% waste reduction, 14.8% cost savings, 15% revenue increase
 
+## 📱 Mobile App
+
+The platform includes a **React Native + Expo** mobile app in the `/mobile` directory.
+
+### Features
+- Real-time dashboard with KPIs
+- AI insights and recommendations
+- Camera-based waste logging
+- Barcode scanning for inventory
+- Offline-first architecture
+- Push notifications
+
+### Running the Mobile App
+
+```bash
+cd mobile
+bun install
+bun start
+```
+
+See `/mobile/README.md` for detailed mobile app documentation.
+
+## 🏗️ Monorepo Structure
+
+This project uses Turborepo for monorepo management:
+
+```
+/
+├── app/              # Next.js web application
+├── mobile/           # React Native mobile app
+├── components/       # Shared web components
+├── lib/             # Shared utilities & database
+├── drizzle/         # Database migrations
+└── turbo.json       # Turborepo configuration
+```
+
+Run commands across the monorepo:
+```bash
+turbo build      # Build all apps
+turbo lint       # Lint all apps
+turbo dev        # Run all apps in development
+```
+
 ---
 
-**Built with ❤️ using Next.js, TypeScript, and AI**
+**Built with ❤️ using Next.js, TypeScript, React Native, and AI**
