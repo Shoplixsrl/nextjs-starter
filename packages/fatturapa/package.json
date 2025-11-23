@@ -1,0 +1,25 @@
+{
+  "name": "@fattura-ai/fatturapa",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./generator": "./src/generator.ts",
+    "./validator": "./src/validator.ts",
+    "./sdi": "./src/sdi/index.ts"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@fattura-ai/database": "workspace:*",
+    "fast-xml-parser": "^4.4.0",
+    "zod": "^4.0.16"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5",
+    "vitest": "^2.0.0"
+  }
+}
