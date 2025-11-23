@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CartProvider } from "@/contexts/cart-context";
 
 export const metadata: Metadata = {
-  title: "Alessio Portfolio",
-  description: "Portfolio showcase by Alessio",
+  title: "FoodHub - Ordina il tuo cibo preferito",
+  description: "Scopri i migliori ristoranti della tua città e ordina a domicilio",
 };
 
 export default function RootLayout({
@@ -12,9 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="it">
       <body className="font-sans antialiased">
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
