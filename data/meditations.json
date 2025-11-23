@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "title": "Respiro Calmo",
+    "duration": 5,
+    "description": "Una breve meditazione per ritrovare la calma interiore attraverso il respiro",
+    "category": "calm",
+    "audioFile": "calm-breathing.mp3",
+    "imageUrl": "meditation-1"
+  },
+  {
+    "id": "2",
+    "title": "Sonno Profondo",
+    "duration": 10,
+    "description": "Lasciati guidare verso un sonno ristoratore e rigenerante",
+    "category": "sleep",
+    "audioFile": "deep-sleep.mp3",
+    "imageUrl": "meditation-2"
+  },
+  {
+    "id": "3",
+    "title": "Focus & Concentrazione",
+    "duration": 7,
+    "description": "Aumenta la tua concentrazione e chiarezza mentale",
+    "category": "focus",
+    "audioFile": "focus.mp3",
+    "imageUrl": "meditation-3"
+  },
+  {
+    "id": "4",
+    "title": "Rilascio Ansia",
+    "duration": 8,
+    "description": "Libera la tensione e l'ansia con questa pratica guidata",
+    "category": "anxiety",
+    "audioFile": "anxiety-relief.mp3",
+    "imageUrl": "meditation-4"
+  },
+  {
+    "id": "5",
+    "title": "Gratitudine",
+    "duration": 5,
+    "description": "Coltiva un cuore grato e pieno di gioia",
+    "category": "calm",
+    "audioFile": "gratitude.mp3",
+    "imageUrl": "meditation-5"
+  }
+]

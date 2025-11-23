@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Benvenuto in Serenity",
+    "description": "Il tuo spazio personale per la meditazione e il benessere mentale",
+    "emoji": "🧘‍♀️"
+  },
+  {
+    "id": "2",
+    "title": "Trova la Tua Calma",
+    "description": "Sessioni di meditazione guidata per ogni momento della giornata",
+    "emoji": "🌸"
+  },
+  {
+    "id": "3",
+    "title": "Traccia il Tuo Progresso",
+    "description": "Costruisci una pratica quotidiana e osserva i tuoi miglioramenti",
+    "emoji": "✨"
+  }
+]
