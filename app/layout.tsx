@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { CartProvider } from "@/contexts/cart-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Alessio Portfolio",
-  description: "Portfolio showcase by Alessio",
+  title: "Nordic Store - Modern Minimalist Home Goods",
+  description: "Curated collection of Scandinavian-inspired furniture, textiles, and decor for modern living.",
 };
 
 export default function RootLayout({
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

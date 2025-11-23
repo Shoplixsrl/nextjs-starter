@@ -1,0 +1,174 @@
+[
+  {
+    "id": "1",
+    "name": "Minimalist Oak Chair",
+    "slug": "minimalist-oak-chair",
+    "category": "Furniture",
+    "price": 289.00,
+    "description": "Handcrafted oak chair with clean lines and natural finish. Perfect for modern Nordic interiors.",
+    "images": [
+      "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1503602642458-232111445657?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=800&h=800&fit=crop"
+    ],
+    "stock": 15,
+    "tags": ["wood", "scandinavian", "chair", "sustainable"]
+  },
+  {
+    "id": "2",
+    "name": "Linen Table Runner",
+    "slug": "linen-table-runner",
+    "category": "Textiles",
+    "price": 45.00,
+    "description": "100% organic linen table runner in natural beige. Stonewashed for a soft, lived-in feel.",
+    "images": [
+      "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=800&fit=crop"
+    ],
+    "stock": 42,
+    "tags": ["linen", "textile", "table", "natural"]
+  },
+  {
+    "id": "3",
+    "name": "Ceramic Vase Set",
+    "slug": "ceramic-vase-set",
+    "category": "Decor",
+    "price": 68.00,
+    "description": "Set of three handmade ceramic vases in matte white and soft grey tones.",
+    "images": [
+      "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&h=800&fit=crop"
+    ],
+    "stock": 28,
+    "tags": ["ceramic", "vase", "handmade", "white"]
+  },
+  {
+    "id": "4",
+    "name": "Wool Throw Blanket",
+    "slug": "wool-throw-blanket",
+    "category": "Textiles",
+    "price": 125.00,
+    "description": "Chunky knit wool throw in warm off-white. Made from sustainably sourced merino wool.",
+    "images": [
+      "https://images.unsplash.com/photo-1585159812596-fac104f2f069?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=800&fit=crop"
+    ],
+    "stock": 19,
+    "tags": ["wool", "blanket", "cozy", "sustainable"]
+  },
+  {
+    "id": "5",
+    "name": "Birch Coffee Table",
+    "slug": "birch-coffee-table",
+    "category": "Furniture",
+    "price": 445.00,
+    "description": "Solid birch coffee table with elegant tapered legs. Features natural wood grain.",
+    "images": [
+      "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1551298370-9d3d53740c72?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1571898223382-5e3d4c3b6b7c?w=800&h=800&fit=crop"
+    ],
+    "stock": 8,
+    "tags": ["wood", "table", "birch", "scandinavian"]
+  },
+  {
+    "id": "6",
+    "name": "Glass Pendant Light",
+    "slug": "glass-pendant-light",
+    "category": "Lighting",
+    "price": 195.00,
+    "description": "Minimalist glass pendant with brass details. Soft ambient lighting for any space.",
+    "images": [
+      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=800&h=800&fit=crop"
+    ],
+    "stock": 12,
+    "tags": ["lighting", "glass", "brass", "pendant"]
+  },
+  {
+    "id": "7",
+    "name": "Cotton Cushion Cover",
+    "slug": "cotton-cushion-cover",
+    "category": "Textiles",
+    "price": 32.00,
+    "description": "Organic cotton cushion cover in subtle stripe pattern. Available in natural tones.",
+    "images": [
+      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?w=800&h=800&fit=crop"
+    ],
+    "stock": 56,
+    "tags": ["cotton", "cushion", "textile", "stripe"]
+  },
+  {
+    "id": "8",
+    "name": "Stone Candle Holder",
+    "slug": "stone-candle-holder",
+    "category": "Decor",
+    "price": 54.00,
+    "description": "Carved limestone candle holder with raw, organic shape. Fits standard taper candles.",
+    "images": [
+      "https://images.unsplash.com/photo-1602874801006-39554b46c2da?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=800&h=800&fit=crop"
+    ],
+    "stock": 22,
+    "tags": ["stone", "candle", "organic", "natural"]
+  },
+  {
+    "id": "9",
+    "name": "Rattan Storage Basket",
+    "slug": "rattan-storage-basket",
+    "category": "Storage",
+    "price": 78.00,
+    "description": "Handwoven rattan basket with leather handles. Perfect for blankets or magazines.",
+    "images": [
+      "https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1581721748850-f67d0380965f?w=800&h=800&fit=crop"
+    ],
+    "stock": 31,
+    "tags": ["rattan", "basket", "storage", "handwoven"]
+  },
+  {
+    "id": "10",
+    "name": "Marble Serving Board",
+    "slug": "marble-serving-board",
+    "category": "Kitchen",
+    "price": 89.00,
+    "description": "White Carrara marble serving board with brass edge detail. Food-safe and heat-resistant.",
+    "images": [
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1608377212009-c3da5ba7c996?w=800&h=800&fit=crop"
+    ],
+    "stock": 17,
+    "tags": ["marble", "kitchen", "serving", "brass"]
+  },
+  {
+    "id": "11",
+    "name": "Ash Wood Bookshelf",
+    "slug": "ash-wood-bookshelf",
+    "category": "Furniture",
+    "price": 520.00,
+    "description": "Five-tier ash wood bookshelf with minimalist ladder design. Modular and wall-mounted.",
+    "images": [
+      "https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1554295405-abb8fd54f153?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&h=800&fit=crop"
+    ],
+    "stock": 6,
+    "tags": ["wood", "bookshelf", "ash", "modular"]
+  },
+  {
+    "id": "12",
+    "name": "Linen Napkin Set",
+    "slug": "linen-napkin-set",
+    "category": "Kitchen",
+    "price": 38.00,
+    "description": "Set of four pure linen napkins in dusty rose. Pre-washed for softness.",
+    "images": [
+      "https://images.unsplash.com/photo-1629998270940-d9f3eae40f7f?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=800&fit=crop"
+    ],
+    "stock": 48,
+    "tags": ["linen", "napkin", "kitchen", "rose"]
+  }
+]
