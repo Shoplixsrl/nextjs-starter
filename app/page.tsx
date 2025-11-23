@@ -1,103 +1,286 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Sparkles,
+  Calendar,
+  LayoutGrid,
+  Users,
+  Clock,
+  BarChart3,
+  Zap,
+  Shield,
+  TrendingUp,
+  CheckCircle,
+  ArrowRight
+} from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-violet-50 dark:from-slate-950 dark:via-slate-900 dark:to-violet-950">
+      {/* Header */}
+      <header className="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600">
+                <Sparkles className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+                  BookingAI
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400">Restaurant SaaS</p>
+              </div>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <nav className="hidden md:flex items-center gap-6">
+              <Link href="#features" className="text-sm font-medium hover:text-violet-600 transition-colors">
+                Features
+              </Link>
+              <Link href="#pricing" className="text-sm font-medium hover:text-violet-600 transition-colors">
+                Pricing
+              </Link>
+              <Link href="/dashboard" className="text-sm font-medium hover:text-violet-600 transition-colors">
+                Dashboard
+              </Link>
+            </nav>
+
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" asChild>
+                <Link href="/login">Login</Link>
+              </Button>
+              <Button className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700" asChild>
+                <Link href="/signup">Inizia Gratis</Link>
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 py-20 md:py-32">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <Badge className="bg-violet-100 dark:bg-violet-950 text-violet-700 dark:text-violet-300 border-violet-200 dark:border-violet-800">
+            🚀 Annichilisci la Concorrenza
+          </Badge>
+
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+            <span className="bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent">
+              Gestione Ristorante
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+              Potenziata dall'AI
+            </span>
+          </h1>
+
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            La piattaforma SaaS multi-tenant che domina il mercato con AI, analytics avanzati e zero commissioni.
+            Superiore a FoodCost, Pienissimo e OpenTable.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-lg h-14 px-8" asChild>
+              <Link href="/signup">
+                Inizia Gratis <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg h-14 px-8" asChild>
+              <Link href="/demo">
+                Vedi Demo
+              </Link>
+            </Button>
+          </div>
+
+          <div className="flex items-center justify-center gap-8 text-sm text-slate-600 dark:text-slate-400">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-green-600" />
+              <span>14 giorni gratis</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-green-600" />
+              <span>Zero commissioni</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-green-600" />
+              <span>Setup in 5 minuti</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section id="features" className="container mx-auto px-4 py-20">
+        <div className="text-center mb-16">
+          <Badge className="mb-4 bg-violet-100 dark:bg-violet-950 text-violet-700 dark:text-violet-300">
+            Features Killer
+          </Badge>
+          <h2 className="text-4xl font-bold mb-4">
+            Tutto ciò di cui hai bisogno
+          </h2>
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Funzionalità enterprise che superano qualsiasi concorrente
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((feature, i) => (
+            <Card key={i} className="p-6 border-none shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className={`p-3 rounded-xl bg-gradient-to-br ${feature.gradient} w-fit mb-4`}>
+                <feature.icon className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p className="text-slate-600 dark:text-slate-400">{feature.description}</p>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="container mx-auto px-4 py-20">
+        <div className="bg-gradient-to-br from-violet-600 to-indigo-600 rounded-3xl p-12 md:p-16 text-white">
+          <div className="grid md:grid-cols-3 gap-12 text-center">
+            <div>
+              <div className="text-5xl font-bold mb-2">95%</div>
+              <div className="text-violet-100">Accuratezza AI</div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold mb-2">40%</div>
+              <div className="text-violet-100">Riduzione No-Show</div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold mb-2">0%</div>
+              <div className="text-violet-100">Commissioni</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="container mx-auto px-4 py-20">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          <h2 className="text-4xl font-bold">
+            Pronto a Dominare il Mercato?
+          </h2>
+          <p className="text-xl text-slate-600 dark:text-slate-400">
+            Unisciti ai ristoranti che hanno scelto l'eccellenza
+          </p>
+          <Button size="lg" className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-lg h-14 px-8" asChild>
+            <Link href="/signup">
+              Inizia Ora Gratis <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600">
+                  <Sparkles className="h-5 w-5 text-white" />
+                </div>
+                <span className="font-bold">BookingAI</span>
+              </div>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                La rivoluzione della gestione ristoranti
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Prodotto</h4>
+              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                <li><Link href="#features">Features</Link></li>
+                <li><Link href="#pricing">Pricing</Link></li>
+                <li><Link href="/demo">Demo</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Azienda</h4>
+              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                <li><Link href="/about">Chi Siamo</Link></li>
+                <li><Link href="/contact">Contatti</Link></li>
+                <li><Link href="/careers">Careers</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Legale</h4>
+              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                <li><Link href="/privacy">Privacy</Link></li>
+                <li><Link href="/terms">Terms</Link></li>
+                <li><Link href="/gdpr">GDPR</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-200 dark:border-slate-800 mt-8 pt-8 text-center text-sm text-slate-600 dark:text-slate-400">
+            © 2025 BookingAI. Made with ❤️ to revolutionize restaurant management.
+          </div>
+        </div>
       </footer>
     </div>
   );
 }
+
+const features = [
+  {
+    icon: Sparkles,
+    title: "AI Optimization",
+    description: "Ottimizzazione automatica tavoli con machine learning e predizione no-show al 95%",
+    gradient: "from-violet-600 to-purple-600"
+  },
+  {
+    icon: Calendar,
+    title: "Prenotazioni Intelligenti",
+    description: "Sistema prenotazioni multi-source con conferme automatiche via Email/SMS/WhatsApp",
+    gradient: "from-blue-600 to-cyan-600"
+  },
+  {
+    icon: LayoutGrid,
+    title: "Table Management",
+    description: "Gestione tavoli drag-and-drop con planimetrie interattive e stato real-time",
+    gradient: "from-emerald-600 to-green-600"
+  },
+  {
+    icon: Clock,
+    title: "Waitlist Digitale",
+    description: "Sistema code automatico con notifiche SMS quando il tavolo è pronto (Fila Fast)",
+    gradient: "from-amber-600 to-orange-600"
+  },
+  {
+    icon: Users,
+    title: "CRM 360°",
+    description: "Profili clienti completi con preferenze, storico visite e programmi fedeltà",
+    gradient: "from-pink-600 to-rose-600"
+  },
+  {
+    icon: BarChart3,
+    title: "Analytics Avanzati",
+    description: "Dashboard real-time con insights predittivi e report personalizzati PDF/Excel",
+    gradient: "from-indigo-600 to-blue-600"
+  },
+  {
+    icon: Zap,
+    title: "Real-Time Sync",
+    description: "Aggiornamenti istantanei su tutti i dispositivi con WebSocket",
+    gradient: "from-yellow-600 to-amber-600"
+  },
+  {
+    icon: Shield,
+    title: "Multi-Tenant Sicuro",
+    description: "Isolamento completo dati tra ristoranti, GDPR compliant, sicurezza enterprise",
+    gradient: "from-red-600 to-pink-600"
+  },
+  {
+    icon: TrendingUp,
+    title: "Zero Commissioni",
+    description: "Nessuna commissione per prenotazione. I tuoi dati rimangono tuoi per sempre",
+    gradient: "from-teal-600 to-emerald-600"
+  }
+];
