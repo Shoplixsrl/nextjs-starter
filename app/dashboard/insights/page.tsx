@@ -71,7 +71,7 @@ export default function InsightsPage() {
         priority: 'high',
         title: 'Bread Waste from Overproduction',
         description:
-          'Predictive analytics show you're producing 18% more bread than needed daily. Thursday and Monday show highest waste rates.',
+          'Predictive analytics show you are producing 18% more bread than needed daily. Thursday and Monday show highest waste rates.',
         impact: { value: '€430', type: 'savings', period: 'monthly' },
         confidence: 91,
         actionItems: [
