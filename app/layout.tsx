@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Alessio Portfolio",
-  description: "Portfolio showcase by Alessio",
+  title: "Agen - AI SaaS Template",
+  description: "Build AI agents that work for you. Create intelligent automation solutions with our modern SaaS template.",
+  keywords: ["AI", "SaaS", "automation", "customer support", "chatbot", "AI agents"],
 };
 
 export default function RootLayout({
@@ -13,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased bg-[#f9f7f7]">
         {children}
       </body>
     </html>
