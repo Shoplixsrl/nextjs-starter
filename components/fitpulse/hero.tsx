@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ArrowRight, Play, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,8 +11,17 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen pt-20 overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#667eea] via-[#764ba2] to-[#f093fb] opacity-10" />
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
+          alt="Gym background"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-[#f4f6fa]/80" />
+      </div>
 
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-[#667eea] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" />
@@ -77,14 +87,23 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Content - App Mockup */}
+          {/* Right Content - App Mockup with Real Image */}
           <div className="relative">
             <div className="relative mx-auto lg:mx-0 max-w-sm lg:max-w-none">
               {/* Phone Frame */}
               <div className="relative z-10 bg-white rounded-[3rem] p-3 shadow-2xl">
-                <div className="bg-gradient-to-br from-[#667eea] via-[#764ba2] to-[#f093fb] rounded-[2.5rem] overflow-hidden aspect-[9/19]">
+                <div className="rounded-[2.5rem] overflow-hidden aspect-[9/19] relative">
+                  {/* App Background Image */}
+                  <Image
+                    src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80"
+                    alt="Workout"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#667eea]/80 via-[#764ba2]/70 to-[#f093fb]/80" />
+
                   {/* App Screen Content */}
-                  <div className="h-full p-6 flex flex-col">
+                  <div className="relative h-full p-6 flex flex-col">
                     {/* Status Bar */}
                     <div className="flex items-center justify-between text-white/80 text-xs mb-8">
                       <span>9:41</span>
@@ -138,11 +157,16 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Floating Cards */}
+              {/* Floating Cards with Images */}
               <div className="absolute -left-4 sm:-left-8 top-1/4 bg-white rounded-2xl p-4 shadow-xl animate-float z-20">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <CheckCircle2 className="w-5 h-5 text-green-600" />
+                  <div className="w-10 h-10 rounded-full overflow-hidden relative">
+                    <Image
+                      src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=80&h=80&fit=crop"
+                      alt="Runner"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-semibold text-sm text-[#111]">Goal Achieved!</p>
@@ -153,8 +177,13 @@ export function Hero() {
 
               <div className="absolute -right-4 sm:-right-8 bottom-1/3 bg-white rounded-2xl p-4 shadow-xl animate-float z-20" style={{ animationDelay: "3s" }}>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                    <span className="text-lg">🔥</span>
+                  <div className="w-10 h-10 rounded-full overflow-hidden relative">
+                    <Image
+                      src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=80&h=80&fit=crop"
+                      alt="Workout"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-semibold text-sm text-[#111]">7 Day Streak</p>
@@ -166,7 +195,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Social Proof */}
+        {/* Social Proof with Brand Logos */}
         <div className="mt-16 md:mt-24 text-center">
           <p className="text-sm text-[#aaa] mb-8 uppercase tracking-wider font-medium">
             Trusted by 50,000+ fitness enthusiasts

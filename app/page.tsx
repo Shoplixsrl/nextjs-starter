@@ -3,6 +3,7 @@ import {
   Hero,
   Features,
   HowItWorks,
+  Gallery,
   Testimonials,
   Pricing,
   CTA,
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <Features />
         <HowItWorks />
+        <Gallery />
         <Testimonials />
         <Pricing />
         <CTA />

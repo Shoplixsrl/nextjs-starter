@@ -2,6 +2,7 @@ export { Header } from "./header";
 export { Hero } from "./hero";
 export { Features } from "./features";
 export { HowItWorks } from "./how-it-works";
+export { Gallery } from "./gallery";
 export { Testimonials } from "./testimonials";
 export { Pricing } from "./pricing";
 export { CTA } from "./cta";

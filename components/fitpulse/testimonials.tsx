@@ -1,50 +1,58 @@
 "use client";
 
+import Image from "next/image";
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
     name: "Sarah Johnson",
     role: "Marathon Runner",
-    image: "SJ",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
     content: "FitPulse completely transformed my training routine. The AI recommendations are spot-on, and I've improved my marathon time by 15 minutes in just 3 months.",
     rating: 5
   },
   {
     name: "Michael Chen",
     role: "Fitness Enthusiast",
-    image: "MC",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     content: "I've tried dozens of fitness apps, but nothing comes close to FitPulse. The personalized workouts and progress tracking keep me motivated every single day.",
     rating: 5
   },
   {
     name: "Emma Williams",
     role: "Busy Professional",
-    image: "EW",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     content: "As someone with a hectic schedule, the quick workout options are a lifesaver. I can squeeze in effective sessions even on my busiest days.",
     rating: 5
   },
   {
     name: "David Rodriguez",
     role: "Weight Loss Journey",
-    image: "DR",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
     content: "Down 30 pounds in 4 months! The nutrition tracking combined with smart workout plans made all the difference. Can't recommend this enough.",
     rating: 5
   },
   {
     name: "Lisa Park",
     role: "Yoga Instructor",
-    image: "LP",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
     content: "I recommend FitPulse to all my students. The variety of workouts and the attention to recovery is exactly what people need for balanced fitness.",
     rating: 5
   },
   {
     name: "James Thompson",
     role: "CrossFit Athlete",
-    image: "JT",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     content: "The progress analytics are incredible. Being able to see my strength gains over time keeps me pushing harder every session.",
     rating: 5
   }
+];
+
+const avatarImages = [
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
 ];
 
 export function Testimonials() {
@@ -94,8 +102,13 @@ export function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#667eea] to-[#764ba2] flex items-center justify-center text-white font-bold">
-                  {testimonial.image}
+                <div className="w-12 h-12 rounded-full overflow-hidden relative">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <p className="font-semibold text-[#111]">{testimonial.name}</p>
@@ -110,12 +123,17 @@ export function Testimonials() {
         <div className="mt-16 flex flex-wrap items-center justify-center gap-8 md:gap-16">
           <div className="flex items-center gap-3">
             <div className="flex -space-x-2">
-              {["SJ", "MC", "EW", "DR"].map((initials, i) => (
+              {avatarImages.map((src, i) => (
                 <div
                   key={i}
-                  className="w-10 h-10 rounded-full bg-gradient-to-br from-[#667eea] to-[#764ba2] flex items-center justify-center text-white text-xs font-bold border-2 border-white"
+                  className="w-10 h-10 rounded-full overflow-hidden relative border-2 border-white"
                 >
-                  {initials}
+                  <Image
+                    src={src}
+                    alt={`User ${i + 1}`}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               ))}
             </div>
