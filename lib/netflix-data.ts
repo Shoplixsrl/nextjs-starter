@@ -52,9 +52,9 @@ export const featuredContent: Movie[] = [
     overview:
       "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1509248961895-40216855ee25?w=1920&q=80",
+      "/images/netflix/backdrops/stranger-things.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1509248961895-40216855ee25?w=500&q=80",
+      "/images/netflix/backdrops/stranger-things.jpg",
     release_date: "2016-07-15",
     vote_average: 8.7,
     genre_ids: [18, 9648, 878],
@@ -69,9 +69,9 @@ export const featuredContent: Movie[] = [
     overview:
       "Geralt of Rivia, a solitary monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1920&q=80",
+      "/images/netflix/backdrops/the-witcher.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80",
+      "/images/netflix/backdrops/the-witcher.jpg",
     release_date: "2019-12-20",
     vote_average: 8.2,
     genre_ids: [28, 12, 14],
@@ -86,9 +86,9 @@ export const featuredContent: Movie[] = [
     overview:
       "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1534313314376-a72289b6181e?w=1920&q=80",
+      "/images/netflix/backdrops/oppenheimer.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1534313314376-a72289b6181e?w=500&q=80",
+      "/images/netflix/backdrops/oppenheimer.jpg",
     release_date: "2023-07-21",
     vote_average: 8.5,
     genre_ids: [18, 36],
@@ -107,9 +107,9 @@ export const trendingNow: Movie[] = [
     overview:
       "Wednesday Addams is sent to Nevermore Academy, a peculiar boarding school where she attempts to master her psychic powers.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=1920&q=80",
+      "/images/netflix/backdrops/wednesday.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=500&q=80",
+      "/images/netflix/backdrops/wednesday.jpg",
     release_date: "2022-11-23",
     vote_average: 8.4,
     genre_ids: [35, 9648, 14],
@@ -124,9 +124,9 @@ export const trendingNow: Movie[] = [
     overview:
       "Tech billionaire Miles Bron invites his friends for a getaway on his private Greek island. When someone turns up dead, Detective Blanc is put on the case.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1920&q=80",
+      "/images/netflix/backdrops/glass-onion.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=500&q=80",
+      "/images/netflix/backdrops/glass-onion.jpg",
     release_date: "2022-12-23",
     vote_average: 7.9,
     genre_ids: [35, 80, 9648],
@@ -141,9 +141,9 @@ export const trendingNow: Movie[] = [
     overview:
       "A young German soldier's terrifying experiences and disillusionment in the trenches of World War I.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=1920&q=80",
+      "/images/netflix/backdrops/all-quiet.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=500&q=80",
+      "/images/netflix/backdrops/all-quiet.jpg",
     release_date: "2022-10-28",
     vote_average: 7.8,
     genre_ids: [18, 10752, 28],
@@ -158,9 +158,9 @@ export const trendingNow: Movie[] = [
     overview:
       "This drama follows the political rivalries and romance of Queen Elizabeth II's reign and the events that shaped the second half of the twentieth century.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1920&q=80",
+      "/images/netflix/backdrops/the-crown.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&q=80",
+      "/images/netflix/backdrops/the-crown.jpg",
     release_date: "2016-11-04",
     vote_average: 8.2,
     genre_ids: [18, 36],
@@ -175,9 +175,9 @@ export const trendingNow: Movie[] = [
     overview:
       "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits with deadly high stakes.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1634193295627-1cdddf751ebf?w=1920&q=80",
+      "/images/netflix/backdrops/squid-game.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1634193295627-1cdddf751ebf?w=500&q=80",
+      "/images/netflix/backdrops/squid-game.jpg",
     release_date: "2021-09-17",
     vote_average: 8.0,
     genre_ids: [18, 9648, 28],
@@ -192,9 +192,9 @@ export const trendingNow: Movie[] = [
     overview:
       "After barely surviving his grievous wounds from his mission in Dhaka, Tyler Rake is back, and his team is ready to take on their next mission.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=1920&q=80",
+      "/images/netflix/backdrops/extraction.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=500&q=80",
+      "/images/netflix/backdrops/extraction.jpg",
     release_date: "2023-06-16",
     vote_average: 7.6,
     genre_ids: [28, 53],
@@ -213,9 +213,9 @@ export const popularOnNetflix: Movie[] = [
     overview:
       "Eight thieves take hostages and lock themselves in the Royal Mint of Spain as a criminal mastermind manipulates the police to carry out his plan.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80",
+      "/images/netflix/backdrops/money-heist.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&q=80",
+      "/images/netflix/backdrops/money-heist.jpg",
     release_date: "2017-05-02",
     vote_average: 8.3,
     genre_ids: [28, 80, 18],
@@ -230,9 +230,9 @@ export const popularOnNetflix: Movie[] = [
     overview:
       "Two low-level astronomers must go on a giant media tour to warn mankind of an approaching comet that will destroy planet Earth.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=1920&q=80",
+      "/images/netflix/backdrops/dont-look-up.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=500&q=80",
+      "/images/netflix/backdrops/dont-look-up.jpg",
     release_date: "2021-12-24",
     vote_average: 7.2,
     genre_ids: [35, 878, 18],
@@ -247,9 +247,9 @@ export const popularOnNetflix: Movie[] = [
     overview:
       "Wealth, lust, and betrayal set in the backdrop of Regency era England, seen through the eyes of the powerful Bridgerton family.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920&q=80",
+      "/images/netflix/backdrops/bridgerton.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&q=80",
+      "/images/netflix/backdrops/bridgerton.jpg",
     release_date: "2020-12-25",
     vote_average: 7.3,
     genre_ids: [18, 10749],
@@ -264,9 +264,9 @@ export const popularOnNetflix: Movie[] = [
     overview:
       "After accidentally crash-landing in 2022, time-traveling fighter pilot Adam Reed teams up with his 12-year-old self on a mission to save the future.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=1920&q=80",
+      "/images/netflix/backdrops/adam-project.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=500&q=80",
+      "/images/netflix/backdrops/adam-project.jpg",
     release_date: "2022-03-11",
     vote_average: 6.7,
     genre_ids: [28, 12, 878],
@@ -281,9 +281,9 @@ export const popularOnNetflix: Movie[] = [
     overview:
       "A missing child causes four families to help each other for answers. What they could not imagine is that this mystery would be connected to the fabric of time.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1920&q=80",
+      "/images/netflix/backdrops/dark.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=500&q=80",
+      "/images/netflix/backdrops/dark.jpg",
     release_date: "2017-12-01",
     vote_average: 8.7,
     genre_ids: [18, 9648, 878],
@@ -298,9 +298,9 @@ export const popularOnNetflix: Movie[] = [
     overview:
       "An Interpol agent tracks the world's most wanted art thief. When a daring heist brings together the FBI's top profiler and two rival criminals.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&q=80",
+      "/images/netflix/backdrops/red-notice.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80",
+      "/images/netflix/backdrops/red-notice.jpg",
     release_date: "2021-11-12",
     vote_average: 6.8,
     genre_ids: [28, 35, 80],
@@ -319,9 +319,9 @@ export const newReleases: Movie[] = [
     overview:
       "An intelligence operative for a shadowy global peacekeeping agency races to stop a hacker from stealing its most valuable and dangerous weapon.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=1920&q=80",
+      "/images/netflix/backdrops/heart-of-stone.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=500&q=80",
+      "/images/netflix/backdrops/heart-of-stone.jpg",
     release_date: "2023-08-11",
     vote_average: 6.9,
     genre_ids: [28, 53],
@@ -336,9 +336,9 @@ export const newReleases: Movie[] = [
     overview:
       "With his straw hat and ragtag crew, young pirate Monkey D. Luffy goes on an epic voyage for treasure in this live-action adaptation of the popular manga.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80",
+      "/images/netflix/backdrops/one-piece.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80",
+      "/images/netflix/backdrops/one-piece.jpg",
     release_date: "2023-08-31",
     vote_average: 8.4,
     genre_ids: [28, 12, 35],
@@ -353,9 +353,9 @@ export const newReleases: Movie[] = [
     overview:
       "After a fateful near-miss, an assassin battles his employers and himself, on an international manhunt he insists isn't personal.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1920&q=80",
+      "/images/netflix/backdrops/the-killer.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80",
+      "/images/netflix/backdrops/the-killer.jpg",
     release_date: "2023-11-10",
     vote_average: 7.4,
     genre_ids: [28, 80, 53],
@@ -370,9 +370,9 @@ export const newReleases: Movie[] = [
     overview:
       "Four detectives in four different eras of London find themselves investigating the same murder.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&q=80",
+      "/images/netflix/backdrops/bodies.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&q=80",
+      "/images/netflix/backdrops/bodies.jpg",
     release_date: "2023-10-19",
     vote_average: 7.6,
     genre_ids: [18, 9648, 878],
@@ -387,9 +387,9 @@ export const newReleases: Movie[] = [
     overview:
       "A family's vacation is upended when two strangers arrive with news of a cyberattack that has plunged the nation into chaos.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1920&q=80",
+      "/images/netflix/backdrops/leave-world-behind.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=500&q=80",
+      "/images/netflix/backdrops/leave-world-behind.jpg",
     release_date: "2023-12-08",
     vote_average: 6.5,
     genre_ids: [18, 9648, 53],
@@ -404,9 +404,9 @@ export const newReleases: Movie[] = [
     overview:
       "A road rage incident sparks an escalating feud between a contractor and the owner of a home goods business.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1920&q=80",
+      "/images/netflix/backdrops/beef.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=500&q=80",
+      "/images/netflix/backdrops/beef.jpg",
     release_date: "2023-04-06",
     vote_average: 8.1,
     genre_ids: [35, 18],
@@ -425,9 +425,9 @@ export const actionAdventure: Movie[] = [
     overview:
       "When the CIA's most skilled operative — whose true identity is known to none — accidentally uncovers dark agency secrets, a psychopathic former colleague puts a bounty on his head.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=1920&q=80",
+      "/images/netflix/backdrops/gray-man.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=500&q=80",
+      "/images/netflix/backdrops/gray-man.jpg",
     release_date: "2022-07-22",
     vote_average: 7.0,
     genre_ids: [28, 53],
@@ -442,9 +442,9 @@ export const actionAdventure: Movie[] = [
     overview:
       "Follow-up series to Vikings set 100 years later and focuses on the adventures of Leif Eriksson, Freydis, Harald Hardrada and the Norman King William the Conqueror.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1920&q=80",
+      "/images/netflix/backdrops/vikings.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=500&q=80",
+      "/images/netflix/backdrops/vikings.jpg",
     release_date: "2022-02-25",
     vote_average: 7.8,
     genre_ids: [28, 12, 18],
@@ -459,9 +459,9 @@ export const actionAdventure: Movie[] = [
     overview:
       "Following a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble, venturing into the quarantine zone to pull off the greatest heist ever attempted.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1920&q=80",
+      "/images/netflix/backdrops/army-dead.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=500&q=80",
+      "/images/netflix/backdrops/army-dead.jpg",
     release_date: "2021-05-21",
     vote_average: 6.3,
     genre_ids: [28, 27, 878],
@@ -476,9 +476,9 @@ export const actionAdventure: Movie[] = [
     overview:
       "A tight-knit group of teens unearths a long-buried secret, setting off a chain of illicit events that takes them on an adventure they'll never forget.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80",
+      "/images/netflix/backdrops/outer-banks.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=80",
+      "/images/netflix/backdrops/outer-banks.jpg",
     release_date: "2020-04-15",
     vote_average: 7.6,
     genre_ids: [12, 18, 9648],
@@ -493,9 +493,9 @@ export const actionAdventure: Movie[] = [
     overview:
       "A gruesome serial killer is terrorizing London while brilliant but disgraced detective John Luther sits behind bars. Haunted by his failure to capture the cyber psychopath.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=1920&q=80",
+      "/images/netflix/backdrops/luther.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=500&q=80",
+      "/images/netflix/backdrops/luther.jpg",
     release_date: "2023-03-10",
     vote_average: 7.2,
     genre_ids: [28, 80, 53],
@@ -510,9 +510,9 @@ export const actionAdventure: Movie[] = [
     overview:
       "Six individuals from all around the globe, each the very best at what they do, have been chosen not only for their skill, but for a unique desire to delete their pasts.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1920&q=80",
+      "/images/netflix/backdrops/six-underground.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1534430480872-3498386e7856?w=500&q=80",
+      "/images/netflix/backdrops/six-underground.jpg",
     release_date: "2019-12-13",
     vote_average: 6.1,
     genre_ids: [28, 53],
@@ -531,9 +531,9 @@ export const sciFiFantasy: Movie[] = [
     overview:
       "Over the last ten years, technology has transformed almost every aspect of our lives before we've had time to stop and question it.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80",
+      "/images/netflix/backdrops/black-mirror.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&q=80",
+      "/images/netflix/backdrops/black-mirror.jpg",
     release_date: "2011-12-04",
     vote_average: 8.4,
     genre_ids: [878, 18, 9648],
@@ -548,9 +548,9 @@ export const sciFiFantasy: Movie[] = [
     overview:
       "After their father is murdered under mysterious circumstances, the three Locke siblings and their mother move into their ancestral home, Keyhouse.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80",
+      "/images/netflix/backdrops/locke-key.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=80",
+      "/images/netflix/backdrops/locke-key.jpg",
     release_date: "2020-02-07",
     vote_average: 7.6,
     genre_ids: [18, 14, 27],
@@ -565,9 +565,9 @@ export const sciFiFantasy: Movie[] = [
     overview:
       "Across continents and decades, five brilliant friends make earth-shattering discoveries as the laws of science unravel and an existential threat emerges.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1920&q=80",
+      "/images/netflix/backdrops/three-body.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=500&q=80",
+      "/images/netflix/backdrops/three-body.jpg",
     release_date: "2024-03-21",
     vote_average: 7.8,
     genre_ids: [878, 18, 9648],
@@ -582,9 +582,9 @@ export const sciFiFantasy: Movie[] = [
     overview:
       "When a peaceful colony on the edge of the galaxy finds itself threatened by the armies of a tyrannical ruling force, a mysterious stranger living among them becomes their best hope.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80",
+      "/images/netflix/backdrops/rebel-moon.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=500&q=80",
+      "/images/netflix/backdrops/rebel-moon.jpg",
     release_date: "2023-12-22",
     vote_average: 6.5,
     genre_ids: [878, 28, 12],
@@ -599,9 +599,9 @@ export const sciFiFantasy: Movie[] = [
     overview:
       "After years of imprisonment, Morpheus — the King of Dreams — embarks on a journey across worlds to find what was stolen from him and restore his power.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1920&q=80",
+      "/images/netflix/backdrops/sandman.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&q=80",
+      "/images/netflix/backdrops/sandman.jpg",
     release_date: "2022-08-05",
     vote_average: 7.8,
     genre_ids: [14, 18],
@@ -616,9 +616,9 @@ export const sciFiFantasy: Movie[] = [
     overview:
       "An archivist takes a job restoring damaged videotapes and gets pulled into the mystery surrounding the director and her documentary about a sinister cult.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?w=1920&q=80",
+      "/images/netflix/backdrops/archive-81.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?w=500&q=80",
+      "/images/netflix/backdrops/archive-81.jpg",
     release_date: "2022-01-14",
     vote_average: 7.4,
     genre_ids: [18, 27, 9648],
@@ -637,9 +637,9 @@ export const documentaries: Movie[] = [
     overview:
       "Experience our planet's natural beauty and examine how climate change impacts all living creatures in this ambitious documentary of unprecedented scope.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80",
+      "/images/netflix/backdrops/our-planet.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80",
+      "/images/netflix/backdrops/our-planet.jpg",
     release_date: "2019-04-05",
     vote_average: 9.3,
     genre_ids: [99],
@@ -654,9 +654,9 @@ export const documentaries: Movie[] = [
     overview:
       "This documentary-drama hybrid explores the dangerous human impact of social networking, with tech experts sounding the alarm on their own creations.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1920&q=80",
+      "/images/netflix/backdrops/social-dilemma.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&q=80",
+      "/images/netflix/backdrops/social-dilemma.jpg",
     release_date: "2020-09-09",
     vote_average: 7.6,
     genre_ids: [99, 18],
@@ -671,9 +671,9 @@ export const documentaries: Movie[] = [
     overview:
       "Drivers, managers and team owners live life in the fast lane — both on and off the track — during each cutthroat season of Formula 1 racing.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1541348263662-e068662d82af?w=1920&q=80",
+      "/images/netflix/backdrops/formula1.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1541348263662-e068662d82af?w=500&q=80",
+      "/images/netflix/backdrops/formula1.jpg",
     release_date: "2019-03-08",
     vote_average: 8.2,
     genre_ids: [99],
@@ -688,9 +688,9 @@ export const documentaries: Movie[] = [
     overview:
       "Step inside the minds of the most innovative designers in a variety of disciplines and learn how design impacts every aspect of life.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&q=80",
+      "/images/netflix/backdrops/abstract.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=80",
+      "/images/netflix/backdrops/abstract.jpg",
     release_date: "2017-02-10",
     vote_average: 8.4,
     genre_ids: [99],
@@ -705,9 +705,9 @@ export const documentaries: Movie[] = [
     overview:
       "In post-industrial Ohio, a Chinese billionaire opens a new factory in the husk of an abandoned GM plant, hiring two thousand blue-collar Americans.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&q=80",
+      "/images/netflix/backdrops/american-factory.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=500&q=80",
+      "/images/netflix/backdrops/american-factory.jpg",
     release_date: "2019-08-21",
     vote_average: 7.5,
     genre_ids: [99],
@@ -722,9 +722,9 @@ export const documentaries: Movie[] = [
     overview:
       "This nature series' new technology reveals the wonders of the nocturnal world, from lions hunting in pitch darkness to bats snatching prey on the wing.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=1920&q=80",
+      "/images/netflix/backdrops/night-earth.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=500&q=80",
+      "/images/netflix/backdrops/night-earth.jpg",
     release_date: "2020-01-29",
     vote_average: 8.6,
     genre_ids: [99],
@@ -743,9 +743,9 @@ export const comedyMovies: Movie[] = [
     overview:
       "Full-time detectives Nick and Audrey are struggling to get their private eye agency off the ground. A friend's wedding gives them a chance to shine.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1529088148495-2db0f3c64a21?w=1920&q=80",
+      "/images/netflix/backdrops/murder-mystery.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1529088148495-2db0f3c64a21?w=500&q=80",
+      "/images/netflix/backdrops/murder-mystery.jpg",
     release_date: "2023-03-31",
     vote_average: 5.8,
     genre_ids: [28, 35, 9648],
@@ -760,9 +760,9 @@ export const comedyMovies: Movie[] = [
     overview:
       "Insecure teen Otis has all the answers when it comes to sex advice, thanks to his therapist mother. So he and a friend set up a school clinic.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=80",
+      "/images/netflix/backdrops/sex-education.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=500&q=80",
+      "/images/netflix/backdrops/sex-education.jpg",
     release_date: "2019-01-11",
     vote_average: 8.2,
     genre_ids: [35, 18],
@@ -777,9 +777,9 @@ export const comedyMovies: Movie[] = [
     overview:
       "Sneaking out. Hooking up. Melting down. The cast and crew of a blockbuster action franchise attempt to shoot a sequel while quarantining at a posh hotel.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80",
+      "/images/netflix/backdrops/the-bubble.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&q=80",
+      "/images/netflix/backdrops/the-bubble.jpg",
     release_date: "2022-04-01",
     vote_average: 4.6,
     genre_ids: [35],
@@ -794,9 +794,9 @@ export const comedyMovies: Movie[] = [
     overview:
       "After a traumatic year, all an Indian-American teen wants is to go from pariah to popular — but friends, family and feelings won't make it easy on her.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80",
+      "/images/netflix/backdrops/never-have-i-ever.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&q=80",
+      "/images/netflix/backdrops/never-have-i-ever.jpg",
     release_date: "2020-04-27",
     vote_average: 7.8,
     genre_ids: [35, 18],
@@ -811,9 +811,9 @@ export const comedyMovies: Movie[] = [
     overview:
       "A new couple and their families find themselves examining modern love and family dynamics amidst clashing cultures, societal expectations and generational differences.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80",
+      "/images/netflix/backdrops/you-people.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&q=80",
+      "/images/netflix/backdrops/you-people.jpg",
     release_date: "2023-01-27",
     vote_average: 5.5,
     genre_ids: [35, 10749],
@@ -828,9 +828,9 @@ export const comedyMovies: Movie[] = [
     overview:
       "Teenage friends find their lives upended by the wonders and horrors of puberty in this animated comedy from real-life best friends.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1596727147705-61a532a659bd?w=1920&q=80",
+      "/images/netflix/backdrops/big-mouth.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1596727147705-61a532a659bd?w=500&q=80",
+      "/images/netflix/backdrops/big-mouth.jpg",
     release_date: "2017-09-29",
     vote_average: 7.8,
     genre_ids: [16, 35],
@@ -849,9 +849,9 @@ export const top10: Movie[] = [
     overview:
       "Jack Reacher, a veteran military police investigator, has just entered civilian life. Reacher is a drifter, carrying no phone and the barest of essentials as he travels the country.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=1920&q=80",
+      "/images/netflix/backdrops/gray-man.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=500&q=80",
+      "/images/netflix/backdrops/gray-man.jpg",
     release_date: "2022-02-04",
     vote_average: 8.1,
     genre_ids: [28, 80, 18],
@@ -866,9 +866,9 @@ export const top10: Movie[] = [
     overview:
       "While monitoring an emergency line, an FBI agent answers a call that thrusts him into a deadly conspiracy involving a mole at the White House.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1920&q=80",
+      "/images/netflix/backdrops/night-agent.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=500&q=80",
+      "/images/netflix/backdrops/night-agent.jpg",
     release_date: "2023-03-23",
     vote_average: 7.8,
     genre_ids: [28, 18, 53],
@@ -883,9 +883,9 @@ export const top10: Movie[] = [
     overview:
       "After her husband is shot dead, Maya sees him on a nanny cam. She doesn't know what to believe — and her search for the truth leads to more questions.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80",
+      "/images/netflix/backdrops/fool-me-once.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&q=80",
+      "/images/netflix/backdrops/fool-me-once.jpg",
     release_date: "2024-01-01",
     vote_average: 7.2,
     genre_ids: [18, 9648, 53],
@@ -900,9 +900,9 @@ export const top10: Movie[] = [
     overview:
       "A master thief is wooed by his ex-girlfriend and the FBI to pull off an impossible heist with his international crew on a 777 flying from London to Zurich.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80",
+      "/images/netflix/backdrops/lift.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500&q=80",
+      "/images/netflix/backdrops/lift.jpg",
     release_date: "2024-01-12",
     vote_average: 6.4,
     genre_ids: [28, 35, 80],
@@ -917,9 +917,9 @@ export const top10: Movie[] = [
     overview:
       "In 1972, the Uruguayan Air Force Flight 571 crashed into the Andes. The survivors are faced with a harrowing choice: to endure or to surrender.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=1920&q=80",
+      "/images/netflix/backdrops/society-snow.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=500&q=80",
+      "/images/netflix/backdrops/society-snow.jpg",
     release_date: "2024-01-04",
     vote_average: 8.1,
     genre_ids: [18, 36],
@@ -934,9 +934,9 @@ export const top10: Movie[] = [
     overview:
       "Griselda Blanco, a Colombian drug lord who rose to power during the cocaine boom of the 1970s and 1980s, is portrayed in this biographical drama.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1558383331-f520f2888351?w=1920&q=80",
+      "/images/netflix/backdrops/griselda.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1558383331-f520f2888351?w=500&q=80",
+      "/images/netflix/backdrops/griselda.jpg",
     release_date: "2024-01-25",
     vote_average: 7.5,
     genre_ids: [80, 18],
@@ -951,9 +951,9 @@ export const top10: Movie[] = [
     overview:
       "A dutiful damsel agrees to marry a handsome prince, only to find the royal family has recruited her as a sacrifice to repay an ancient debt.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80",
+      "/images/netflix/backdrops/damsel.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=500&q=80",
+      "/images/netflix/backdrops/damsel.jpg",
     release_date: "2024-03-08",
     vote_average: 6.8,
     genre_ids: [12, 14, 28],
@@ -968,9 +968,9 @@ export const top10: Movie[] = [
     overview:
       "In a war-torn world of elemental magic, a young boy must master the powers of earth, water, fire and air to save the world.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1518173946687-a4c036bc1c5a?w=1920&q=80",
+      "/images/netflix/backdrops/avatar-airbender.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1518173946687-a4c036bc1c5a?w=500&q=80",
+      "/images/netflix/backdrops/avatar-airbender.jpg",
     release_date: "2024-02-22",
     vote_average: 7.9,
     genre_ids: [12, 14, 28],
@@ -985,9 +985,9 @@ export const top10: Movie[] = [
     overview:
       "The paths of a blind French girl and a German soldier collide in occupied France as both try to survive the devastation of World War II.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1499000957146-71f5033c6ba3?w=1920&q=80",
+      "/images/netflix/backdrops/all-light.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1499000957146-71f5033c6ba3?w=500&q=80",
+      "/images/netflix/backdrops/all-light.jpg",
     release_date: "2023-11-02",
     vote_average: 7.1,
     genre_ids: [18, 10752],
@@ -1002,9 +1002,9 @@ export const top10: Movie[] = [
     overview:
       "A towering and complex figure, Leonard Bernstein touched every aspect of American music during his rise to become one of the most influential conductors of his time.",
     backdrop_path:
-      "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1920&q=80",
+      "/images/netflix/backdrops/maestro.jpg",
     poster_path:
-      "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=500&q=80",
+      "/images/netflix/backdrops/maestro.jpg",
     release_date: "2023-12-20",
     vote_average: 7.0,
     genre_ids: [18, 10749, 10402],
@@ -1027,29 +1027,26 @@ export const userProfiles: UserProfile[] = [
   {
     id: 1,
     name: "Marco",
-    avatar:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&h=200&fit=crop",
+    avatar: "/images/netflix/avatars/profile-1.jpg",
     isKids: false,
   },
   {
     id: 2,
     name: "Sofia",
-    avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+    avatar: "/images/netflix/avatars/profile-2.jpg",
     isKids: false,
   },
   {
     id: 3,
     name: "Kids",
-    avatar:
-      "https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=200&h=200&fit=crop",
+    avatar: "/images/netflix/avatars/profile-3.jpg",
     isKids: true,
   },
   {
     id: 4,
     name: "Guest",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+      "/images/netflix/backdrops/one-piece.jpg",
     isKids: false,
   },
 ];
