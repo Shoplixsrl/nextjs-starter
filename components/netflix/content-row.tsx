@@ -26,7 +26,6 @@ export function ContentRow({
   const rowRef = useRef<HTMLDivElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
 
   const updateArrows = () => {
     if (rowRef.current) {
@@ -44,7 +43,7 @@ export function ContentRow({
 
   const scroll = (direction: "left" | "right") => {
     if (rowRef.current) {
-      const scrollAmount = rowRef.current.clientWidth * 0.8;
+      const scrollAmount = rowRef.current.clientWidth * 0.75;
       rowRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -53,22 +52,18 @@ export function ContentRow({
   };
 
   return (
-    <div
-      className="relative group py-4"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="relative group/row py-4 md:py-6">
       {/* Title */}
-      <h2 className="text-lg md:text-xl font-semibold text-white px-4 md:px-12 mb-2 flex items-center group/title cursor-pointer hover:text-gray-300 transition-colors">
+      <h2 className="text-sm md:text-base lg:text-lg font-bold text-white px-4 md:px-12 mb-2 md:mb-3 flex items-center">
         {title}
         {isTop10 && (
-          <span className="ml-2 text-xs bg-[#e50914] text-white px-2 py-0.5 rounded">
+          <span className="ml-2 text-[10px] bg-[#e50914] text-white px-1.5 py-0.5 rounded font-medium">
             TOP 10
           </span>
         )}
-        <ChevronRight className="h-5 w-5 ml-1 opacity-0 group-hover/title:opacity-100 group-hover/title:translate-x-1 transition-all" />
-        <span className="text-sm font-normal text-[#54b9c5] ml-1 opacity-0 group-hover/title:opacity-100 transition-opacity">
+        <span className="flex items-center ml-2 opacity-0 group-hover/row:opacity-100 transition-opacity text-[#54b9c5] text-xs font-normal">
           Explore All
+          <ChevronRight className="h-4 w-4" />
         </span>
       </h2>
 
@@ -78,28 +73,23 @@ export function ContentRow({
         <button
           onClick={() => scroll("left")}
           className={cn(
-            "absolute left-0 top-0 bottom-0 z-40 w-12 md:w-16 flex items-center justify-center",
-            "bg-black/50 hover:bg-black/80 transition-all duration-300",
-            "opacity-0 group-hover:opacity-100",
-            !showLeftArrow && "invisible"
+            "absolute left-0 top-0 bottom-6 z-40 w-10 md:w-14 flex items-center justify-center",
+            "bg-gradient-to-r from-[#141414]/90 to-transparent",
+            "opacity-0 group-hover/row:opacity-100 transition-opacity duration-300",
+            !showLeftArrow && "pointer-events-none"
           )}
         >
-          <ChevronLeft className="h-8 w-8 text-white" />
+          <ChevronLeft className={cn(
+            "h-8 w-8 text-white transition-opacity",
+            !showLeftArrow && "opacity-0"
+          )} />
         </button>
 
         {/* Content Scroll Area */}
         <div
           ref={rowRef}
           onScroll={updateArrows}
-          className={cn(
-            "flex gap-2 overflow-x-scroll scrollbar-hide scroll-smooth",
-            "px-4 md:px-12 pb-8",
-            isTop10 && "gap-4"
-          )}
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
+          className="flex gap-1 md:gap-2 overflow-x-auto scrollbar-hide scroll-smooth px-4 md:px-12 pb-2"
         >
           {movies.map((movie, index) => (
             <MovieCard
@@ -118,13 +108,16 @@ export function ContentRow({
         <button
           onClick={() => scroll("right")}
           className={cn(
-            "absolute right-0 top-0 bottom-0 z-40 w-12 md:w-16 flex items-center justify-center",
-            "bg-black/50 hover:bg-black/80 transition-all duration-300",
-            "opacity-0 group-hover:opacity-100",
-            !showRightArrow && "invisible"
+            "absolute right-0 top-0 bottom-6 z-40 w-10 md:w-14 flex items-center justify-center",
+            "bg-gradient-to-l from-[#141414]/90 to-transparent",
+            "opacity-0 group-hover/row:opacity-100 transition-opacity duration-300",
+            !showRightArrow && "pointer-events-none"
           )}
         >
-          <ChevronRight className="h-8 w-8 text-white" />
+          <ChevronRight className={cn(
+            "h-8 w-8 text-white transition-opacity",
+            !showRightArrow && "opacity-0"
+          )} />
         </button>
       </div>
     </div>

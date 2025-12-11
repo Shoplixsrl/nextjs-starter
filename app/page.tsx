@@ -15,10 +15,13 @@ import {
   contentRows,
   top10,
   searchContent,
+  userProfiles,
 } from "@/lib/netflix-data";
 
 export default function Home() {
-  const [currentProfile, setCurrentProfile] = useState<UserProfile | null>(null);
+  // Start with default profile (first user)
+  const [currentProfile, setCurrentProfile] = useState<UserProfile>(userProfiles[0]);
+  const [showProfileSelector, setShowProfileSelector] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -30,6 +33,14 @@ export default function Home() {
   // Handle profile selection
   const handleProfileSelect = (profile: UserProfile) => {
     setCurrentProfile(profile);
+    setShowProfileSelector(false);
+  };
+
+  // Handle logout / switch profile
+  const handleLogout = () => {
+    setShowProfileSelector(true);
+    setIsSearching(false);
+    setSearchQuery("");
   };
 
   // Handle play
@@ -58,8 +69,8 @@ export default function Home() {
     }
   };
 
-  // Show profile selector if no profile selected
-  if (!currentProfile) {
+  // Show profile selector only on logout
+  if (showProfileSelector) {
     return <ProfileSelector onSelectProfile={handleProfileSelect} />;
   }
 
@@ -77,12 +88,12 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#141414]">
+    <div className="min-h-screen bg-[#141414] overflow-x-hidden">
       {/* Header */}
       <NetflixHeader
         currentProfile={currentProfile}
         onSearch={handleSearch}
-        onProfileClick={() => setCurrentProfile(null)}
+        onProfileClick={handleLogout}
       />
 
       {/* Main Content */}
@@ -94,7 +105,7 @@ export default function Home() {
           onMoreInfo={handleMoreInfo}
         />
       ) : (
-        <main>
+        <main className="relative">
           {/* Hero Banner */}
           <HeroBanner
             content={featuredContent}
@@ -103,7 +114,7 @@ export default function Home() {
           />
 
           {/* Content Rows */}
-          <div className="relative z-10 -mt-32 pb-20">
+          <section className="relative z-10 -mt-40 md:-mt-52 pb-20 space-y-2">
             {/* Top 10 Row */}
             <ContentRow
               title="Top 10 in Italy Today"
@@ -123,7 +134,37 @@ export default function Home() {
                 onMoreInfo={handleMoreInfo}
               />
             ))}
-          </div>
+          </section>
+
+          {/* Footer */}
+          <footer className="px-4 md:px-12 py-10 text-gray-500 text-sm">
+            <div className="max-w-5xl">
+              <div className="flex gap-4 mb-6">
+                <a href="#" className="hover:text-gray-300">Facebook</a>
+                <a href="#" className="hover:text-gray-300">Instagram</a>
+                <a href="#" className="hover:text-gray-300">Twitter</a>
+                <a href="#" className="hover:text-gray-300">YouTube</a>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 text-xs">
+                <a href="#" className="hover:underline">Audio Description</a>
+                <a href="#" className="hover:underline">Help Center</a>
+                <a href="#" className="hover:underline">Gift Cards</a>
+                <a href="#" className="hover:underline">Media Center</a>
+                <a href="#" className="hover:underline">Investor Relations</a>
+                <a href="#" className="hover:underline">Jobs</a>
+                <a href="#" className="hover:underline">Terms of Use</a>
+                <a href="#" className="hover:underline">Privacy</a>
+                <a href="#" className="hover:underline">Legal Notices</a>
+                <a href="#" className="hover:underline">Cookie Preferences</a>
+                <a href="#" className="hover:underline">Corporate Information</a>
+                <a href="#" className="hover:underline">Contact Us</a>
+              </div>
+              <button className="border border-gray-500 px-2 py-1 text-xs mb-4 hover:text-white">
+                Service Code
+              </button>
+              <p className="text-xs">© 2024 Netflix Clone - Demo Project</p>
+            </div>
+          </footer>
         </main>
       )}
 
