@@ -71,7 +71,7 @@ export default function MyListPage() {
               You haven't added any titles to your list yet
             </p>
             <Link
-              href="/netflix"
+              href="/"
               className="text-white underline hover:text-gray-300 transition-colors"
             >
               Browse titles to add to your list

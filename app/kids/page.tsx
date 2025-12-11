@@ -123,7 +123,7 @@ export default function KidsPage() {
       {/* Kids Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#1a1a2e] to-transparent">
         <div className="flex items-center justify-between px-4 md:px-12 py-4">
-          <Link href="/netflix" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <svg
               viewBox="0 0 111 30"
               className="h-6 md:h-8 fill-[#e50914]"
@@ -135,7 +135,7 @@ export default function KidsPage() {
           </Link>
 
           <Link
-            href="/netflix"
+            href="/"
             className="text-white text-sm hover:text-gray-300 transition-colors"
           >
             Exit Kids

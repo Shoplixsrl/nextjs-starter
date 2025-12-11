@@ -13,12 +13,12 @@ interface NetflixHeaderProps {
 }
 
 const navLinks = [
-  { label: "Home", href: "/netflix" },
-  { label: "TV Shows", href: "/netflix?category=tv" },
-  { label: "Movies", href: "/netflix?category=movies" },
-  { label: "New & Popular", href: "/netflix?category=new" },
-  { label: "My List", href: "/netflix/my-list" },
-  { label: "Browse by Languages", href: "/netflix?category=languages" },
+  { label: "Home", href: "/" },
+  { label: "TV Shows", href: "/?category=tv" },
+  { label: "Movies", href: "/?category=movies" },
+  { label: "New & Popular", href: "/?category=new" },
+  { label: "My List", href: "/my-list" },
+  { label: "Browse by Languages", href: "/?category=languages" },
 ];
 
 export function NetflixHeader({
@@ -58,7 +58,7 @@ export function NetflixHeader({
         {/* Left section */}
         <div className="flex items-center gap-8">
           {/* Netflix Logo */}
-          <Link href="/netflix" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0">
             <svg
               viewBox="0 0 111 30"
               className="h-6 md:h-8 fill-[#e50914]"
@@ -131,7 +131,7 @@ export function NetflixHeader({
 
           {/* Kids */}
           <Link
-            href="/netflix/kids"
+            href="/kids"
             className="hidden md:block text-sm text-gray-300 hover:text-white transition-colors"
           >
             Kids
