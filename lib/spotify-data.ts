@@ -37,6 +37,7 @@ export interface Track {
   plays: number;
   explicit: boolean;
   image: string;
+  previewUrl: string | null;
 }
 
 export interface Playlist {
@@ -288,6 +289,18 @@ export const albums: Album[] = [
   }
 ];
 
+// Audio preview samples (royalty-free music samples for demo)
+const audioSamples = [
+  '/api/audio/synth-pop',
+  '/api/audio/electronic',
+  '/api/audio/hip-hop',
+  '/api/audio/rnb',
+  '/api/audio/rock',
+  '/api/audio/indie',
+  '/api/audio/latin',
+  '/api/audio/ambient',
+];
+
 // Helper function to generate tracks
 function generateTracks(): Track[] {
   const trackNames = [
@@ -310,6 +323,7 @@ function generateTracks(): Track[] {
     const numTracks = Math.min(5, album.totalTracks);
     for (let i = 0; i < numTracks; i++) {
       const nameIndex = (albumIndex * 5 + i) % trackNames.length;
+      const durationMs = (Math.floor(Math.random() * 120) + 180) * 1000;
       tracks.push({
         id: `track-${trackId}`,
         title: trackNames[nameIndex],
@@ -317,11 +331,12 @@ function generateTracks(): Track[] {
         artistId: album.artistId,
         album: album,
         albumId: album.id,
-        duration: `${Math.floor(Math.random() * 2) + 3}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`,
-        durationMs: (Math.floor(Math.random() * 120) + 180) * 1000,
+        duration: `${Math.floor(durationMs / 60000)}:${String(Math.floor((durationMs % 60000) / 1000)).padStart(2, '0')}`,
+        durationMs,
         plays: Math.floor(Math.random() * 2000000000) + 100000000,
         explicit: Math.random() > 0.5,
-        image: album.image
+        image: album.image,
+        previewUrl: audioSamples[(albumIndex + i) % audioSamples.length]
       });
       trackId++;
     }
