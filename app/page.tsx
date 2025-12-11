@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { NetflixHeader } from "@/components/netflix/netflix-header";
 import { HeroBanner } from "@/components/netflix/hero-banner";
 import { ContentRow } from "@/components/netflix/content-row";
@@ -8,17 +8,22 @@ import { MovieModal } from "@/components/netflix/movie-modal";
 import { VideoPlayer } from "@/components/netflix/video-player";
 import { ProfileSelector } from "@/components/netflix/profile-selector";
 import { SearchResults } from "@/components/netflix/search-results";
+import { useTMDBBrowse, useTMDBSearch } from "@/hooks/use-tmdb";
 import {
   Movie,
   UserProfile,
-  featuredContent,
-  contentRows,
-  top10,
-  searchContent,
   userProfiles,
+  // Fallback data for loading/error states
+  featuredContent as fallbackFeatured,
+  contentRows as fallbackRows,
+  top10 as fallbackTop10,
 } from "@/lib/netflix-data";
 
 export default function Home() {
+  // TMDB Data hooks
+  const { data: tmdbData, loading: tmdbLoading, error: tmdbError } = useTMDBBrowse();
+  const { results: tmdbSearchResults, search: tmdbSearch, clearSearch } = useTMDBSearch();
+
   // Start with default profile (first user)
   const [currentProfile, setCurrentProfile] = useState<UserProfile>(userProfiles[0]);
   const [showProfileSelector, setShowProfileSelector] = useState(false);
@@ -27,8 +32,25 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [playingMovie, setPlayingMovie] = useState<Movie | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<Movie[]>([]);
   const [isSearching, setIsSearching] = useState(false);
+
+  // Build content rows from TMDB data
+  const contentRows = tmdbData
+    ? [
+        { title: "Trending Now", data: tmdbData.trendingNow },
+        { title: "Popular on Netflix", data: tmdbData.popularOnNetflix },
+        { title: "New Releases", data: tmdbData.newReleases },
+        { title: "Netflix Originals", data: tmdbData.netflixOriginals },
+        { title: "Action & Adventure", data: tmdbData.actionAdventure },
+        { title: "Comedy", data: tmdbData.comedy },
+        { title: "Sci-Fi & Fantasy", data: tmdbData.sciFiFantasy },
+        { title: "Documentaries", data: tmdbData.documentaries },
+        { title: "Drama", data: tmdbData.drama },
+      ]
+    : fallbackRows;
+
+  const featuredContent = tmdbData?.featuredContent || fallbackFeatured;
+  const top10 = tmdbData?.top10 || fallbackTop10;
 
   // Handle profile selection
   const handleProfileSelect = (profile: UserProfile) => {
@@ -56,18 +78,20 @@ export default function Home() {
     setIsModalOpen(true);
   };
 
-  // Handle search
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    if (query.trim()) {
-      setIsSearching(true);
-      const results = searchContent(query);
-      setSearchResults(results);
-    } else {
-      setIsSearching(false);
-      setSearchResults([]);
-    }
-  };
+  // Handle search with TMDB
+  const handleSearch = useCallback(
+    (query: string) => {
+      setSearchQuery(query);
+      if (query.trim()) {
+        setIsSearching(true);
+        tmdbSearch(query);
+      } else {
+        setIsSearching(false);
+        clearSearch();
+      }
+    },
+    [tmdbSearch, clearSearch]
+  );
 
   // Show profile selector only on logout
   if (showProfileSelector) {
@@ -96,11 +120,26 @@ export default function Home() {
         onProfileClick={handleLogout}
       />
 
+      {/* Loading State */}
+      {tmdbLoading && !tmdbData && (
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-600"></div>
+        </div>
+      )}
+
+      {/* Error State */}
+      {tmdbError && !tmdbData && (
+        <div className="flex flex-col items-center justify-center min-h-screen text-white">
+          <p className="text-xl mb-4">Unable to load content</p>
+          <p className="text-gray-400 text-sm">Using fallback data</p>
+        </div>
+      )}
+
       {/* Main Content */}
       {isSearching ? (
         <SearchResults
           query={searchQuery}
-          results={searchResults}
+          results={tmdbSearchResults}
           onPlay={handlePlay}
           onMoreInfo={handleMoreInfo}
         />

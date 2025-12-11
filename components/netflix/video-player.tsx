@@ -15,8 +15,10 @@ import {
   ArrowLeft,
   RotateCcw,
   RotateCw,
+  Loader2,
 } from "lucide-react";
 import { Movie } from "@/lib/netflix-data";
+import { useMovieDetails } from "@/hooks/use-tmdb";
 import { cn } from "@/lib/utils";
 
 interface VideoPlayerProps {
@@ -28,58 +30,18 @@ export function VideoPlayer({ movie, onClose }: VideoPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(80);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration] = useState((movie.runtime || 45) * 60);
   const [showControls, setShowControls] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const formatTime = (seconds: number) => {
-    const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = Math.floor(seconds % 60);
+  // Fetch trailer from TMDB
+  const { data: details, loading } = useMovieDetails(
+    movie.id,
+    movie.media_type
+  );
 
-    if (hrs > 0) {
-      return `${hrs}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
-    }
-    return `${mins}:${secs.toString().padStart(2, "0")}`;
-  };
-
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-
-    if (isPlaying) {
-      interval = setInterval(() => {
-        setCurrentTime((prev) => {
-          if (prev >= duration) {
-            setIsPlaying(false);
-            return prev;
-          }
-          return prev + 1;
-        });
-      }, 1000);
-    }
-
-    return () => clearInterval(interval);
-  }, [isPlaying, duration]);
-
-  useEffect(() => {
-    const hideControls = () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      setShowControls(true);
-
-      timeoutRef.current = setTimeout(() => {
-        if (isPlaying) setShowControls(false);
-      }, 3000);
-    };
-
-    hideControls();
-
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [isPlaying]);
+  const trailer = details?.trailer;
 
   const handleMouseMove = () => {
     setShowControls(true);
@@ -124,45 +86,78 @@ export function VideoPlayer({ movie, onClose }: VideoPlayerProps) {
         case "Escape":
           handleBack();
           break;
-        case "ArrowLeft":
-          setCurrentTime((prev) => Math.max(0, prev - 10));
-          break;
-        case "ArrowRight":
-          setCurrentTime((prev) => Math.min(duration, prev + 10));
-          break;
       }
     };
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [duration]);
+  }, []);
 
-  const progress = (currentTime / duration) * 100;
+  // Hide controls timer
+  useEffect(() => {
+    const hideControls = () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      setShowControls(true);
+
+      timeoutRef.current = setTimeout(() => {
+        if (isPlaying) setShowControls(false);
+      }, 3000);
+    };
+
+    hideControls();
+
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [isPlaying]);
 
   return (
     <div
       ref={containerRef}
       className="fixed inset-0 z-[100] bg-black"
       onMouseMove={handleMouseMove}
-      onClick={() => setIsPlaying(!isPlaying)}
     >
-      {/* Video Background */}
+      {/* Video/Trailer Content */}
       <div className="absolute inset-0">
-        <img
-          src={movie.backdrop_path}
-          alt={movie.title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/30" />
+        {loading ? (
+          // Loading State
+          <div className="w-full h-full flex flex-col items-center justify-center bg-black">
+            <Loader2 className="w-16 h-16 text-red-600 animate-spin mb-4" />
+            <p className="text-white text-lg">Loading trailer...</p>
+          </div>
+        ) : trailer ? (
+          // YouTube Trailer
+          <iframe
+            src={`https://www.youtube.com/embed/${trailer.key}?autoplay=${isPlaying ? 1 : 0}&mute=${isMuted ? 1 : 0}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0&disablekb=1&playsinline=1`}
+            className="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title={trailer.name}
+          />
+        ) : (
+          // Fallback to backdrop image
+          <>
+            <img
+              src={movie.backdrop_path}
+              alt={movie.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+              <div className="text-center text-white">
+                <p className="text-2xl font-semibold mb-2">No Trailer Available</p>
+                <p className="text-gray-400">Preview not available for this title</p>
+              </div>
+            </div>
+          </>
+        )}
       </div>
 
       {/* Controls Overlay */}
       <div
         className={cn(
           "absolute inset-0 transition-opacity duration-300",
-          showControls ? "opacity-100" : "opacity-0"
+          showControls ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
-        onClick={(e) => e.stopPropagation()}
       >
         {/* Top Bar - Back Button */}
         <div className="absolute top-0 left-0 right-0 p-4 md:p-8 bg-gradient-to-b from-black/80 via-black/40 to-transparent">
@@ -175,66 +170,35 @@ export function VideoPlayer({ movie, onClose }: VideoPlayerProps) {
           </button>
         </div>
 
-        {/* Center Controls */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="flex items-center gap-12 pointer-events-auto">
-            <button
-              onClick={() => setCurrentTime((prev) => Math.max(0, prev - 10))}
-              className="text-white/80 hover:text-white transition-colors p-3"
-            >
-              <RotateCcw className="w-12 h-12" />
-              <span className="text-xs block mt-1">10s</span>
-            </button>
-
-            <button
-              onClick={() => setIsPlaying(!isPlaying)}
-              className="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-all hover:scale-110"
-            >
-              {isPlaying ? (
-                <Pause className="w-12 h-12 text-white" />
-              ) : (
-                <Play className="w-12 h-12 text-white ml-1" />
-              )}
-            </button>
-
-            <button
-              onClick={() => setCurrentTime((prev) => Math.min(duration, prev + 10))}
-              className="text-white/80 hover:text-white transition-colors p-3"
-            >
-              <RotateCw className="w-12 h-12" />
-              <span className="text-xs block mt-1">10s</span>
-            </button>
+        {/* Center Play/Pause Button */}
+        {!trailer && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="flex items-center gap-12 pointer-events-auto">
+              <button
+                onClick={() => setIsPlaying(!isPlaying)}
+                className="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-all hover:scale-110"
+              >
+                {isPlaying ? (
+                  <Pause className="w-12 h-12 text-white" />
+                ) : (
+                  <Play className="w-12 h-12 text-white ml-1" />
+                )}
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Bottom Controls */}
         <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 bg-gradient-to-t from-black via-black/60 to-transparent">
           {/* Title */}
           <div className="mb-4">
             <h2 className="text-2xl md:text-3xl font-bold text-white">{movie.title}</h2>
-            {movie.seasons && (
+            {trailer && (
+              <p className="text-gray-400 text-sm mt-1">{trailer.name}</p>
+            )}
+            {!trailer && movie.seasons && (
               <p className="text-gray-400 text-sm mt-1">S1:E1 "Pilot"</p>
             )}
-          </div>
-
-          {/* Progress Bar */}
-          <div className="relative mb-4 group cursor-pointer">
-            <div className="h-1 group-hover:h-2 bg-gray-600/80 rounded-full transition-all">
-              <div
-                className="h-full bg-[#e50914] rounded-full relative"
-                style={{ width: `${progress}%` }}
-              >
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#e50914] rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-            </div>
-            <input
-              type="range"
-              min="0"
-              max={duration}
-              value={currentTime}
-              onChange={(e) => setCurrentTime(Number(e.target.value))}
-              className="absolute inset-0 w-full opacity-0 cursor-pointer"
-            />
           </div>
 
           {/* Control Buttons */}
@@ -249,20 +213,6 @@ export function VideoPlayer({ movie, onClose }: VideoPlayerProps) {
                 ) : (
                   <Play className="w-7 h-7" />
                 )}
-              </button>
-
-              <button
-                onClick={() => setCurrentTime((prev) => Math.max(0, prev - 10))}
-                className="text-white hover:text-gray-300 transition-colors hidden md:block"
-              >
-                <SkipBack className="w-6 h-6" />
-              </button>
-
-              <button
-                onClick={() => setCurrentTime((prev) => Math.min(duration, prev + 10))}
-                className="text-white hover:text-gray-300 transition-colors hidden md:block"
-              >
-                <SkipForward className="w-6 h-6" />
               </button>
 
               <div className="flex items-center gap-2 group/vol">
@@ -291,9 +241,11 @@ export function VideoPlayer({ movie, onClose }: VideoPlayerProps) {
                 </div>
               </div>
 
-              <span className="text-white text-sm">
-                {formatTime(currentTime)} / {formatTime(duration)}
-              </span>
+              {trailer && (
+                <span className="text-white text-sm">
+                  Trailer
+                </span>
+              )}
             </div>
 
             <div className="flex items-center gap-4">
