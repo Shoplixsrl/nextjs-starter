@@ -1,4 +1,5 @@
 // Mock data for Spotify Clone
+// Using high-quality music-related images
 
 export interface Artist {
   id: string;
@@ -59,12 +60,12 @@ export interface Category {
   color: string;
 }
 
-// Artists
+// Artists with music-appropriate images
 export const artists: Artist[] = [
   {
     id: 'artist-1',
     name: 'The Weeknd',
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab6761610000e5eb214f3cf1cbe7139c1e26ffbb',
     followers: 85420000,
     monthlyListeners: 92500000,
     verified: true,
@@ -74,7 +75,7 @@ export const artists: Artist[] = [
   {
     id: 'artist-2',
     name: 'Dua Lipa',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab6761610000e5eb1bbee4a02f85ecc58d385c3e',
     followers: 65300000,
     monthlyListeners: 78200000,
     verified: true,
@@ -84,7 +85,7 @@ export const artists: Artist[] = [
   {
     id: 'artist-3',
     name: 'Drake',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab6761610000e5eb4293385d324db8558179afd9',
     followers: 79800000,
     monthlyListeners: 88100000,
     verified: true,
@@ -94,7 +95,7 @@ export const artists: Artist[] = [
   {
     id: 'artist-4',
     name: 'Billie Eilish',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab6761610000e5ebd8b9980db67272cb4d2c3daf',
     followers: 72100000,
     monthlyListeners: 85600000,
     verified: true,
@@ -104,7 +105,7 @@ export const artists: Artist[] = [
   {
     id: 'artist-5',
     name: 'Ed Sheeran',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab6761610000e5eb3bcef85e105dfc42399ef0ba',
     followers: 92500000,
     monthlyListeners: 98700000,
     verified: true,
@@ -114,7 +115,7 @@ export const artists: Artist[] = [
   {
     id: 'artist-6',
     name: 'Taylor Swift',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab6761610000e5eb5a00969a4698c3bc19f58bd9',
     followers: 95200000,
     monthlyListeners: 102300000,
     verified: true,
@@ -124,7 +125,7 @@ export const artists: Artist[] = [
   {
     id: 'artist-7',
     name: 'Bad Bunny',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab6761610000e5eb9ad50e478a469c7f9de8af30',
     followers: 68900000,
     monthlyListeners: 89400000,
     verified: true,
@@ -134,7 +135,7 @@ export const artists: Artist[] = [
   {
     id: 'artist-8',
     name: 'Arctic Monkeys',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab6761610000e5eb7da39dea0a72f581535fb11f',
     followers: 32500000,
     monthlyListeners: 45600000,
     verified: true,
@@ -144,7 +145,7 @@ export const artists: Artist[] = [
   {
     id: 'artist-9',
     name: 'Kendrick Lamar',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab6761610000e5eb437b9e2a82505b3d93ff1022',
     followers: 42800000,
     monthlyListeners: 56700000,
     verified: true,
@@ -154,7 +155,7 @@ export const artists: Artist[] = [
   {
     id: 'artist-10',
     name: 'Doja Cat',
-    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab6761610000e5eb9d5305eb7c7fd96f61e7f991',
     followers: 58600000,
     monthlyListeners: 72400000,
     verified: true,
@@ -163,14 +164,14 @@ export const artists: Artist[] = [
   }
 ];
 
-// Albums
+// Albums with official-looking cover art
 export const albums: Album[] = [
   {
     id: 'album-1',
     title: 'After Hours',
     artist: artists[0],
     artistId: 'artist-1',
-    image: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36',
     releaseDate: '2020-03-20',
     type: 'album',
     totalTracks: 14,
@@ -182,7 +183,7 @@ export const albums: Album[] = [
     title: 'Future Nostalgia',
     artist: artists[1],
     artistId: 'artist-2',
-    image: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67616d0000b273d4daf28d55fe4197ede848be',
     releaseDate: '2020-03-27',
     type: 'album',
     totalTracks: 11,
@@ -194,7 +195,7 @@ export const albums: Album[] = [
     title: 'Certified Lover Boy',
     artist: artists[2],
     artistId: 'artist-3',
-    image: 'https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67616d0000b273cd945b4e3de57edd28481a3f',
     releaseDate: '2021-09-03',
     type: 'album',
     totalTracks: 21,
@@ -206,7 +207,7 @@ export const albums: Album[] = [
     title: 'Happier Than Ever',
     artist: artists[3],
     artistId: 'artist-4',
-    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67616d0000b2732a038d3bf875d23e4aeaa84e',
     releaseDate: '2021-07-30',
     type: 'album',
     totalTracks: 16,
@@ -218,7 +219,7 @@ export const albums: Album[] = [
     title: '= (Equals)',
     artist: artists[4],
     artistId: 'artist-5',
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67616d0000b273ef24c3fdbf856340d55cfeb2',
     releaseDate: '2021-10-29',
     type: 'album',
     totalTracks: 14,
@@ -230,7 +231,7 @@ export const albums: Album[] = [
     title: 'Midnights',
     artist: artists[5],
     artistId: 'artist-6',
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67616d0000b273bb54dde68cd23e2a268ae0f5',
     releaseDate: '2022-10-21',
     type: 'album',
     totalTracks: 13,
@@ -242,7 +243,7 @@ export const albums: Album[] = [
     title: 'Un Verano Sin Ti',
     artist: artists[6],
     artistId: 'artist-7',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67616d0000b273cc5d2f3e411b2e8e8b12f8e8',
     releaseDate: '2022-05-06',
     type: 'album',
     totalTracks: 23,
@@ -254,7 +255,7 @@ export const albums: Album[] = [
     title: 'AM',
     artist: artists[7],
     artistId: 'artist-8',
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67616d0000b2734ae1c4c5c45aabe565499163',
     releaseDate: '2013-09-06',
     type: 'album',
     totalTracks: 12,
@@ -266,7 +267,7 @@ export const albums: Album[] = [
     title: 'Mr. Morale & The Big Steppers',
     artist: artists[8],
     artistId: 'artist-9',
-    image: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67616d0000b2732e02117d76426a08ac7c174f',
     releaseDate: '2022-05-13',
     type: 'album',
     totalTracks: 18,
@@ -278,7 +279,7 @@ export const albums: Album[] = [
     title: 'Planet Her',
     artist: artists[9],
     artistId: 'artist-10',
-    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67616d0000b2734df3245f26298a1579ecc321',
     releaseDate: '2021-06-25',
     type: 'album',
     totalTracks: 14,
@@ -331,13 +332,13 @@ function generateTracks(): Track[] {
 
 export const tracks = generateTracks();
 
-// Playlists
+// Playlists with Spotify-style cover images
 export const playlists: Playlist[] = [
   {
     id: 'playlist-1',
     title: 'Today\'s Top Hits',
     description: 'The hottest tracks right now. Updated daily.',
-    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67706f000000027ea4d505212b9de1f72c5112',
     owner: 'Spotify',
     followers: 34582000,
     totalTracks: 50,
@@ -350,7 +351,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-2',
     title: 'RapCaviar',
     description: 'New music from Drake, Lil Baby, and more.',
-    image: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67706f00000002b101f5e0a6f76a5e1e051f47',
     owner: 'Spotify',
     followers: 14852000,
     totalTracks: 50,
@@ -363,7 +364,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-3',
     title: 'All Out 2010s',
     description: 'The biggest songs of the 2010s.',
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67706f00000002b0fe40a6e1692822f5a9d8f1',
     owner: 'Spotify',
     followers: 8234000,
     totalTracks: 100,
@@ -376,7 +377,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-4',
     title: 'Chill Hits',
     description: 'Kick back to the best new and recent chill hits.',
-    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67706f00000002eac46f0eb2d1c5c8e3b4e814',
     owner: 'Spotify',
     followers: 12450000,
     totalTracks: 75,
@@ -389,7 +390,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-5',
     title: 'Viva Latino',
     description: 'Today\'s top Latin hits, refreshed every week.',
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67706f000000025f0ff9251e3cfe641160dc31',
     owner: 'Spotify',
     followers: 15678000,
     totalTracks: 50,
@@ -402,7 +403,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-6',
     title: 'Rock Classics',
     description: 'Rock legends & iconic bands.',
-    image: 'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67706f00000002fe6d8d1019d5b302213e3730',
     owner: 'Spotify',
     followers: 23456000,
     totalTracks: 85,
@@ -415,7 +416,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-7',
     title: 'Peaceful Piano',
     description: 'Relax and indulge with beautiful piano pieces.',
-    image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67706f00000002ca5a7517156021292e5663a6',
     owner: 'Spotify',
     followers: 7890000,
     totalTracks: 200,
@@ -428,7 +429,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-8',
     title: 'Hot Country',
     description: 'Today\'s hottest country hits.',
-    image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67706f00000002a3cea6ef06c6ed89b1e1c638',
     owner: 'Spotify',
     followers: 9876000,
     totalTracks: 50,
@@ -441,7 +442,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-9',
     title: 'Mood Booster',
     description: 'Get happy with today\'s dose of feel-good songs!',
-    image: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?w=400&h=400&fit=crop',
+    image: 'https://i.scdn.co/image/ab67706f00000002bd0e19e810bb4b55ab164a95',
     owner: 'Spotify',
     followers: 11234000,
     totalTracks: 75,
@@ -454,7 +455,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-10',
     title: 'Discover Weekly',
     description: 'Your weekly mixtape of fresh music. Updated every Monday.',
-    image: 'https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?w=400&h=400&fit=crop',
+    image: 'https://newjams-images.scdn.co/image/ab676477000033ad/dt/v3/discover-weekly/aAbca4VNfzWuUCQ_FGiEFA==/bmVuZW5lbmVuZW5lbmVuZQ==',
     owner: 'Spotify',
     followers: 0,
     totalTracks: 30,
@@ -467,7 +468,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-11',
     title: 'Daily Mix 1',
     description: 'The Weeknd, Dua Lipa, Drake and more',
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
+    image: 'https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb214f3cf1cbe7139c1e26ffbb/1/en/default',
     owner: 'Spotify',
     followers: 0,
     totalTracks: 50,
@@ -480,7 +481,7 @@ export const playlists: Playlist[] = [
     id: 'playlist-12',
     title: 'Daily Mix 2',
     description: 'Arctic Monkeys, Kendrick Lamar and more',
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=400&fit=crop',
+    image: 'https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb7da39dea0a72f581535fb11f/2/en/default',
     owner: 'Spotify',
     followers: 0,
     totalTracks: 50,
@@ -491,24 +492,24 @@ export const playlists: Playlist[] = [
   }
 ];
 
-// Categories for Browse
+// Categories for Browse with Spotify colors
 export const categories: Category[] = [
-  { id: 'cat-1', name: 'Pop', image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop', color: '#dc148c' },
-  { id: 'cat-2', name: 'Hip-Hop', image: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=400&fit=crop', color: '#ba5d07' },
-  { id: 'cat-3', name: 'Rock', image: 'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=400&h=400&fit=crop', color: '#e61e32' },
-  { id: 'cat-4', name: 'Latin', image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop', color: '#1e3264' },
-  { id: 'cat-5', name: 'Electronic', image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop', color: '#148a08' },
-  { id: 'cat-6', name: 'R&B', image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop', color: '#dc148c' },
-  { id: 'cat-7', name: 'Indie', image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=400&fit=crop', color: '#8d67ab' },
-  { id: 'cat-8', name: 'Country', image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=400&h=400&fit=crop', color: '#ba5d07' },
-  { id: 'cat-9', name: 'Jazz', image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=400&h=400&fit=crop', color: '#477d95' },
-  { id: 'cat-10', name: 'Classical', image: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=400&h=400&fit=crop', color: '#7358ff' },
-  { id: 'cat-11', name: 'Workout', image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop', color: '#e8115b' },
-  { id: 'cat-12', name: 'Chill', image: 'https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?w=400&h=400&fit=crop', color: '#608108' },
-  { id: 'cat-13', name: 'Party', image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=400&fit=crop', color: '#af2896' },
-  { id: 'cat-14', name: 'Sleep', image: 'https://images.unsplash.com/photo-1495954484750-af469f2f9be5?w=400&h=400&fit=crop', color: '#1e3264' },
-  { id: 'cat-15', name: 'Focus', image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=400&fit=crop', color: '#503750' },
-  { id: 'cat-16', name: 'Podcasts', image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&h=400&fit=crop', color: '#1e3264' }
+  { id: 'cat-1', name: 'Pop', image: 'https://i.scdn.co/image/ab67fb8200005caf7e11c8413dc33c00740579c1', color: '#dc148c' },
+  { id: 'cat-2', name: 'Hip-Hop', image: 'https://i.scdn.co/image/ab67fb8200005caf7e11c8413dc33c00740579c1', color: '#ba5d07' },
+  { id: 'cat-3', name: 'Rock', image: 'https://i.scdn.co/image/ab67fb8200005cafae7e69beb88f16969641b53e', color: '#e61e32' },
+  { id: 'cat-4', name: 'Latin', image: 'https://i.scdn.co/image/ab67fb8200005caf7bdf5f8a310edc90773a9a92', color: '#e1118b' },
+  { id: 'cat-5', name: 'Dance/Electronic', image: 'https://i.scdn.co/image/ab67fb8200005cafdfdaac1cf9574a196ca25196', color: '#148a08' },
+  { id: 'cat-6', name: 'R&B', image: 'https://i.scdn.co/image/ab67fb8200005caf5eb2a7ce555f226db2dc1377', color: '#dc148c' },
+  { id: 'cat-7', name: 'Indie', image: 'https://i.scdn.co/image/ab67fb8200005caf6827a98ed8e41c84d1e2e743', color: '#8d67ab' },
+  { id: 'cat-8', name: 'Country', image: 'https://i.scdn.co/image/ab67fb8200005cafe914a07d20cec7a65e2e5dad', color: '#ba5d07' },
+  { id: 'cat-9', name: 'Jazz', image: 'https://i.scdn.co/image/ab67fb8200005caf80c11f37bfa6e142fba64632', color: '#477d95' },
+  { id: 'cat-10', name: 'Classical', image: 'https://i.scdn.co/image/ab67fb8200005caf12809992dfc5b318892ea07b', color: '#7358ff' },
+  { id: 'cat-11', name: 'Workout', image: 'https://i.scdn.co/image/ab67fb8200005cafbb0e4a466e7b0f5c4b8d9e80', color: '#e8115b' },
+  { id: 'cat-12', name: 'Chill', image: 'https://i.scdn.co/image/ab67fb8200005cafe914a07d20cec7a65e2e5dad', color: '#608108' },
+  { id: 'cat-13', name: 'Party', image: 'https://i.scdn.co/image/ab67fb8200005caf4b36a2c31432ace68d90c4f2', color: '#af2896' },
+  { id: 'cat-14', name: 'Sleep', image: 'https://i.scdn.co/image/ab67fb8200005caf9249b35cd1a20b4288089d69', color: '#1e3264' },
+  { id: 'cat-15', name: 'Focus', image: 'https://i.scdn.co/image/ab67fb8200005cafe49aabe1e1b141d9dc06e05b', color: '#503750' },
+  { id: 'cat-16', name: 'Podcasts', image: 'https://i.scdn.co/image/ab6765630000ba8a81f07e1ead0317ee3c285f4c', color: '#1e3264' }
 ];
 
 // User Library (for "Your Library" section)
