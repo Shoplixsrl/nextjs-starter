@@ -1,0 +1,48 @@
+{
+  "name": "@lumea/supervisor-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for Lumea Dev Server Supervisor",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "lumea",
+    "supervisor",
+    "nextjs",
+    "dev-server",
+    "process-manager"
+  ],
+  "author": "Shoplixsrl",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shoplixsrl/lumea-supervisor"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

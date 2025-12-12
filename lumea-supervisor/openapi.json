@@ -1,0 +1,1012 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Lumea Dev Server Supervisor API",
+    "description": "A resilient, efficient, and observable system for managing multiple Next.js development servers.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Shoplixsrl",
+      "url": "https://github.com/Shoplixsrl/lumea-supervisor"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Local development server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "servers",
+      "description": "Server management operations"
+    },
+    {
+      "name": "lifecycle",
+      "description": "Server lifecycle control"
+    },
+    {
+      "name": "logs",
+      "description": "Log retrieval"
+    },
+    {
+      "name": "metrics",
+      "description": "Metrics and monitoring"
+    },
+    {
+      "name": "health",
+      "description": "Health check"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": ["health"],
+        "summary": "Health check",
+        "description": "Check if the agent is healthy and running",
+        "operationId": "healthCheck",
+        "responses": {
+          "200": {
+            "description": "Agent is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/servers": {
+      "get": {
+        "tags": ["servers"],
+        "summary": "List all servers",
+        "description": "Retrieve a list of all configured servers with their current state",
+        "operationId": "listServers",
+        "responses": {
+          "200": {
+            "description": "List of servers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Server"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["servers"],
+        "summary": "Create a new server",
+        "description": "Create a new server configuration",
+        "operationId": "createServer",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateServerRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Server created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Server"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Server already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/servers/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Server ID",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "tags": ["servers"],
+        "summary": "Get server details",
+        "description": "Retrieve details of a specific server",
+        "operationId": "getServer",
+        "responses": {
+          "200": {
+            "description": "Server details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Server"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Server not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["servers"],
+        "summary": "Update server configuration",
+        "description": "Update an existing server's configuration",
+        "operationId": "updateServer",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateServerRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Server updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Server"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Server not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["servers"],
+        "summary": "Delete a server",
+        "description": "Delete a server configuration. Stops the server if running.",
+        "operationId": "deleteServer",
+        "responses": {
+          "204": {
+            "description": "Server deleted successfully"
+          },
+          "404": {
+            "description": "Server not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/servers/{id}/start": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Server ID",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "tags": ["lifecycle"],
+        "summary": "Start a server",
+        "description": "Start a stopped server",
+        "operationId": "startServer",
+        "responses": {
+          "200": {
+            "description": "Server started",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Server"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Server not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Server is already running",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/servers/{id}/stop": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Server ID",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "tags": ["lifecycle"],
+        "summary": "Stop a server",
+        "description": "Stop a running server",
+        "operationId": "stopServer",
+        "parameters": [
+          {
+            "name": "timeout",
+            "in": "query",
+            "description": "Graceful shutdown timeout in seconds",
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Server stopped",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Server"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Server not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Server is not running",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/servers/{id}/restart": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Server ID",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "post": {
+        "tags": ["lifecycle"],
+        "summary": "Restart a server",
+        "description": "Restart a server (stop then start)",
+        "operationId": "restartServer",
+        "responses": {
+          "200": {
+            "description": "Server restarted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Server"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Server not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/servers/{id}/logs": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Server ID",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "tags": ["logs"],
+        "summary": "Get server logs",
+        "description": "Retrieve recent log entries from a server",
+        "operationId": "getServerLogs",
+        "parameters": [
+          {
+            "name": "tail",
+            "in": "query",
+            "description": "Number of log entries to retrieve",
+            "schema": {
+              "type": "integer",
+              "default": 200,
+              "minimum": 1,
+              "maximum": 10000
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Log entries",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogEntry"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Server not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/servers/{id}/metrics": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Server ID",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "tags": ["metrics"],
+        "summary": "Get server metrics",
+        "description": "Retrieve current resource metrics for a server",
+        "operationId": "getServerMetrics",
+        "responses": {
+          "200": {
+            "description": "Server metrics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProcessMetrics"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Server not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/node/metrics": {
+      "get": {
+        "tags": ["metrics"],
+        "summary": "Get node metrics",
+        "description": "Retrieve system-wide resource metrics",
+        "operationId": "getNodeMetrics",
+        "responses": {
+          "200": {
+            "description": "Node metrics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeMetrics"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HealthResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "healthy"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": ["status", "time"]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": ["code", "message"]
+      },
+      "ServerStatus": {
+        "type": "string",
+        "enum": ["stopped", "starting", "running", "stopping", "crashed", "backing_off"],
+        "description": "Current status of the server"
+      },
+      "RestartMode": {
+        "type": "string",
+        "enum": ["never", "on-failure", "always"],
+        "description": "When to restart the server"
+      },
+      "BackoffConfig": {
+        "type": "object",
+        "properties": {
+          "initialMs": {
+            "type": "integer",
+            "description": "Initial backoff delay in milliseconds",
+            "default": 1000
+          },
+          "maxMs": {
+            "type": "integer",
+            "description": "Maximum backoff delay in milliseconds",
+            "default": 60000
+          },
+          "multiplier": {
+            "type": "number",
+            "description": "Backoff multiplier",
+            "default": 2.0
+          },
+          "jitterPct": {
+            "type": "number",
+            "description": "Jitter percentage (0-1)",
+            "default": 0.1
+          }
+        }
+      },
+      "RestartPolicy": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/RestartMode"
+          },
+          "maxRetries": {
+            "type": "integer",
+            "description": "Maximum restart attempts in window",
+            "default": 5
+          },
+          "windowSec": {
+            "type": "integer",
+            "description": "Time window for counting retries in seconds",
+            "default": 300
+          },
+          "backoff": {
+            "$ref": "#/components/schemas/BackoffConfig"
+          }
+        }
+      },
+      "CgroupsConfig": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "cpuMax": {
+            "type": "string",
+            "description": "CPU limit (e.g., '50000 100000' for 50%)"
+          },
+          "memoryMaxBytes": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Memory limit in bytes"
+          },
+          "pidsMax": {
+            "type": "integer",
+            "description": "Maximum number of PIDs"
+          }
+        }
+      },
+      "ResourceConfig": {
+        "type": "object",
+        "properties": {
+          "cpuMaxPct": {
+            "type": "number",
+            "description": "Maximum CPU percentage"
+          },
+          "memoryMaxMB": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Maximum memory in MB"
+          },
+          "cgroups": {
+            "$ref": "#/components/schemas/CgroupsConfig"
+          }
+        }
+      },
+      "LogConfig": {
+        "type": "object",
+        "properties": {
+          "dir": {
+            "type": "string",
+            "description": "Log directory path"
+          },
+          "maxFileSizeMB": {
+            "type": "integer",
+            "description": "Maximum log file size in MB",
+            "default": 10
+          },
+          "maxFiles": {
+            "type": "integer",
+            "description": "Maximum number of rotated files",
+            "default": 5
+          },
+          "ringBufferLines": {
+            "type": "integer",
+            "description": "Number of lines to keep in memory",
+            "default": 1000
+          }
+        }
+      },
+      "ServerSpec": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique server identifier"
+          },
+          "workspaceDir": {
+            "type": "string",
+            "description": "Working directory for the server"
+          },
+          "command": {
+            "type": "string",
+            "description": "Command to execute"
+          },
+          "args": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Command arguments"
+          },
+          "env": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Environment variables"
+          },
+          "port": {
+            "type": "integer",
+            "description": "Port number"
+          },
+          "url": {
+            "type": "string",
+            "description": "Server URL"
+          },
+          "restartPolicy": {
+            "$ref": "#/components/schemas/RestartPolicy"
+          },
+          "resources": {
+            "$ref": "#/components/schemas/ResourceConfig"
+          },
+          "log": {
+            "$ref": "#/components/schemas/LogConfig"
+          }
+        },
+        "required": ["id", "workspaceDir", "command"]
+      },
+      "ProcessMetrics": {
+        "type": "object",
+        "properties": {
+          "cpuPct": {
+            "type": "number",
+            "description": "CPU usage percentage"
+          },
+          "rssMB": {
+            "type": "number",
+            "description": "Resident set size in MB"
+          },
+          "fds": {
+            "type": "integer",
+            "description": "Number of open file descriptors"
+          }
+        }
+      },
+      "ServerRuntime": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ServerStatus"
+          },
+          "pid": {
+            "type": "integer",
+            "description": "Process ID"
+          },
+          "pgid": {
+            "type": "integer",
+            "description": "Process group ID"
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the server was started"
+          },
+          "lastExitAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the server last exited"
+          },
+          "lastExitCode": {
+            "type": "integer",
+            "description": "Last exit code"
+          },
+          "lastError": {
+            "type": "string",
+            "description": "Last error message"
+          },
+          "restartCountWindow": {
+            "type": "integer",
+            "description": "Restart count in current window"
+          },
+          "restartCountTotal": {
+            "type": "integer",
+            "description": "Total restart count"
+          },
+          "backoffUntil": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Backoff end time"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/ProcessMetrics"
+          }
+        }
+      },
+      "Server": {
+        "type": "object",
+        "properties": {
+          "spec": {
+            "$ref": "#/components/schemas/ServerSpec"
+          },
+          "runtime": {
+            "$ref": "#/components/schemas/ServerRuntime"
+          }
+        },
+        "required": ["spec", "runtime"]
+      },
+      "CreateServerRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique server identifier (auto-generated if not provided)"
+          },
+          "workspaceDir": {
+            "type": "string",
+            "description": "Working directory for the server"
+          },
+          "command": {
+            "type": "string",
+            "description": "Command to execute"
+          },
+          "args": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Command arguments"
+          },
+          "env": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Environment variables"
+          },
+          "port": {
+            "type": "integer",
+            "description": "Port number"
+          },
+          "url": {
+            "type": "string",
+            "description": "Server URL"
+          },
+          "restartPolicy": {
+            "$ref": "#/components/schemas/RestartPolicy"
+          },
+          "resources": {
+            "$ref": "#/components/schemas/ResourceConfig"
+          },
+          "log": {
+            "$ref": "#/components/schemas/LogConfig"
+          }
+        },
+        "required": ["workspaceDir", "command"]
+      },
+      "UpdateServerRequest": {
+        "type": "object",
+        "properties": {
+          "workspaceDir": {
+            "type": "string"
+          },
+          "command": {
+            "type": "string"
+          },
+          "args": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "env": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "port": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string"
+          },
+          "restartPolicy": {
+            "$ref": "#/components/schemas/RestartPolicy"
+          },
+          "resources": {
+            "$ref": "#/components/schemas/ResourceConfig"
+          },
+          "log": {
+            "$ref": "#/components/schemas/LogConfig"
+          }
+        }
+      },
+      "LogEntry": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "stream": {
+            "type": "string",
+            "enum": ["stdout", "stderr"]
+          },
+          "line": {
+            "type": "string"
+          }
+        },
+        "required": ["timestamp", "stream", "line"]
+      },
+      "NodeMetrics": {
+        "type": "object",
+        "properties": {
+          "totalMemoryMB": {
+            "type": "number"
+          },
+          "usedMemoryMB": {
+            "type": "number"
+          },
+          "memoryUsedPct": {
+            "type": "number"
+          },
+          "loadAvg1": {
+            "type": "number"
+          },
+          "loadAvg5": {
+            "type": "number"
+          },
+          "loadAvg15": {
+            "type": "number"
+          },
+          "cpuCount": {
+            "type": "integer"
+          },
+          "runningServers": {
+            "type": "integer"
+          },
+          "totalServers": {
+            "type": "integer"
+          }
+        }
+      },
+      "EventType": {
+        "type": "string",
+        "enum": [
+          "server.created",
+          "server.updated",
+          "server.deleted",
+          "server.state_changed",
+          "server.process_exit",
+          "server.resource_alert",
+          "server.log_line",
+          "node.metrics"
+        ]
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/EventType"
+          },
+          "serverId": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": ["id", "type", "timestamp"]
+      },
+      "StateChangeData": {
+        "type": "object",
+        "properties": {
+          "previousState": {
+            "type": "string"
+          },
+          "currentState": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      },
+      "ProcessExitData": {
+        "type": "object",
+        "properties": {
+          "exitCode": {
+            "type": "integer"
+          },
+          "signal": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "ResourceAlertData": {
+        "type": "object",
+        "properties": {
+          "resource": {
+            "type": "string"
+          },
+          "current": {
+            "type": "number"
+          },
+          "threshold": {
+            "type": "number"
+          },
+          "action": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
