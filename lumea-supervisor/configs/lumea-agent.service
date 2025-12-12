@@ -1,0 +1,43 @@
+[Unit]
+Description=Lumea Dev Server Supervisor Agent
+Documentation=https://github.com/shoplixsrl/lumea-supervisor
+After=network.target
+
+[Service]
+Type=simple
+User=lumea
+Group=lumea
+ExecStart=/usr/local/bin/lumea-agent \
+    --listen=:8080 \
+    --state=/var/lib/lumea/servers.json \
+    --log-dir=/var/log/lumea \
+    --max-mem=85 \
+    --max-cpu=90 \
+    --max-servers=10
+
+# Restart configuration
+Restart=on-failure
+RestartSec=5
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=false  # Allow cgroups management
+ReadWritePaths=/var/lib/lumea /var/log/lumea /sys/fs/cgroup/lumea
+
+# Resource limits
+LimitNOFILE=65535
+LimitNPROC=4096
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=lumea-agent
+
+[Install]
+WantedBy=multi-user.target

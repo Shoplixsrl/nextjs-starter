@@ -1,0 +1,47 @@
+{
+  "listenAddr": ":8080",
+  "statePath": "/var/lib/lumea/servers.json",
+  "logDir": "/var/log/lumea",
+  "nodePolicy": {
+    "maxTotalMemPct": 85.0,
+    "maxTotalCpuPct": 90.0,
+    "maxRunningServers": 10
+  },
+  "servers": [
+    {
+      "id": "my-nextjs-app",
+      "workspaceDir": "/home/user/projects/my-app",
+      "command": "bun",
+      "args": ["run", "dev"],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "port": 3000,
+      "url": "http://localhost:3000",
+      "restartPolicy": {
+        "mode": "on-failure",
+        "maxRetries": 5,
+        "windowSec": 300,
+        "backoff": {
+          "initialMs": 1000,
+          "maxMs": 60000,
+          "multiplier": 2.0,
+          "jitterPct": 0.1
+        }
+      },
+      "resources": {
+        "cpuMaxPct": 80,
+        "memoryMaxMB": 512,
+        "cgroups": {
+          "enabled": false
+        }
+      },
+      "log": {
+        "dir": "/var/log/lumea/my-nextjs-app",
+        "maxFileSizeMB": 10,
+        "maxFiles": 5,
+        "ringBufferLines": 1000
+      }
+    }
+  ]
+}
